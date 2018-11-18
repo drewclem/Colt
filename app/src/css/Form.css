@@ -1,12 +1,13 @@
-form {
+.form {
     padding: 20px;
     display: block;
 }
 
-.form-control{
-    margin-bottom: 10px;
-}
-
 label{
     display:block;
+}
+
+.disclaimer{
+    font-size: 12px;
+    color: rgba(63, 78, 100, 0.5);
 }

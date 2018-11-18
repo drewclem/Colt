@@ -1,7 +1,7 @@
-/*--
+
 .App {
-  text-align: center;
-}--*/
+  color: rgb(43, 43, 43);
+}
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
@@ -9,13 +9,9 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  height: 50px;
-  display: grid;
-  grid-column: auto;
-  font-size: calc(10px + 2vmin);
+  background-color: #61dafb;
   color: white;
-  padding: 20px;
+  padding: 10px 15px;
 }
 
 .App-link {

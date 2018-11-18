@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 import './css/App.css';
 import Form from './components/Form';
 import List from './components/List';
+import './css/bootstrap/css/bootstrap.min.css';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
         <header className="App-header">
-          Colt
+          <h2>Colt</h2>
         </header>
         <Form />
         <List />

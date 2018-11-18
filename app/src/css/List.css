@@ -1,0 +1,17 @@
+li{
+    list-style: none;
+    padding-bottom: 20px;
+}
+
+ul{
+
+    padding-inline-start: 0;
+}
+
+p{
+    color: rgba(43,43,43, .5)
+}
+
+.difficulty{
+    color: rgb(117, 179, 250);
+}
