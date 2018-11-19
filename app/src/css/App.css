@@ -3,15 +3,16 @@
   color: rgb(43, 43, 43);
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+.App-header {
+  background-color: #465472;
+  color: rgb(103, 220, 228);
+  padding: 10px 15px;
 }
 
-.App-header {
-  background-color: #61dafb;
-  color: white;
-  padding: 10px 15px;
+.logo{
+  color: rgb(103, 220, 228);
+  font-weight: 700;
+  font-size: 24px;
 }
 
 .App-link {
