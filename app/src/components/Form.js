@@ -1,45 +1,32 @@
 import React, { Component } from 'react';
 import'../css/Form.css';
 import '../css/bootstrap/css/bootstrap.min.css';
+import List from './List'
 
 class Form extends Component {
     constructor(props){
         super(props);
         this.state={
-            title: '',
-            difficulty: '',
-            link: '',
-            email: '',
-            description: ''
+            title: props.title,
+            difficulty: props.difficulty,
+            link: props.link,
+            email: props.email,
+            description: props.description
         };
-
-        this.handleChange = this.handleChange.bind(this);
         this.submitChange = this.submitChange.bind(this);
     }
 
-    handleChange(event){
-        const target = event.target;
-        const name = target.name;
-        let value = target.value;
-
-        this.setState({
-            [name]: value
-        });
-    }
-
     submitChange(event){
-        alert([this.state.title,
-               this.state.difficulty,
-               this.state.link,
-               this.state.email,
-               this.state.description     
-        ]);
+        event.preventDefault();
+
+        console.log(this.refs)
     }
+    
 
     render(){
         return(
-            <div className="form col-md-5">
-                <form onSubmit={this.submitChange}>
+            <div>
+                <form  className="form col-md-5" onSubmit={this.submitChange}>
                     <div className="row">
                         <div className="form-group col-xs-9">
                             <label>Project Title:</label>
@@ -48,19 +35,16 @@ class Form extends Component {
                                 className="form-control"
                                 placeholder="Please enter a name for the project"
                                 type="text"
-                                value={this.state.title}
-                                onChange={this.handleChange}
-                                required
+                                ref="title"
                             />
                         </div>
                         
-                       <div className="form-group col-xs-4">
+                        <div className="form-group col-xs-4">
                             <label>Difficulty Level:</label>
                             <select
                                 name="difficulty"
                                 className="form-control"
-                                value={this.state.value}
-                                onChange={this.handleChange}
+                                ref="difficulty"
                             >
                                     <option value="Easy">Easy</option>
                                     <option value="Intermediate">Intermediate</option>
@@ -73,11 +57,9 @@ class Form extends Component {
                             <input
                                 name="link"
                                 type="text"
+                                ref="link"
                                 className="form-control"
-                                value={this.state.link}
-                                onChange={this.handleChange}
                                 placeholder="Link to github repo"
-                                required
                             />
                                 
                         </div>
@@ -87,11 +69,9 @@ class Form extends Component {
                             <input
                                 name="email"
                                 type="email"
+                                ref="email"
                                 className="form-control"
-                                value={this.state.email}
-                                onChange={this.handleChange}
                                 placeholder="Please enter a vaild email"
-                                required
                             />
                         </div>
 
@@ -100,10 +80,8 @@ class Form extends Component {
                             <textarea
                                 name="description"
                                 className="form-control"
-                                value={this.state.description}
-                                onChange={this.handleChange}
+                                ref="description"
                                 placeholder="Please provide a short description of the project issue." 
-                                required
                             />
                         </div>
 
@@ -116,6 +94,9 @@ class Form extends Component {
                         </div>
                     </div>
                 </form>
+    
+                <List />
+                
             </div>
         )
     }
