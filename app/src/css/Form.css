@@ -1,17 +1,17 @@
 .form {
-    padding: 20px;
-    display: block;
+  padding: 20px;
+  display: block;
 }
 
-label{
-    display:block;
+label {
+  display: block;
 }
 
-.disclaimer{
-    font-size: 12px;
-    color: rgba(63, 78, 100, 0.5);
+.disclaimer {
+  font-size: 12px;
+  color: rgba(63, 78, 100, 0.5);
 }
 
-.blue-btn{
-    background-color: red;
+.blue-btn {
+  background-color: red;
 }

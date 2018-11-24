@@ -1,17 +1,16 @@
-li{
-    list-style: none;
-    padding-bottom: 20px;
+li {
+  list-style: none;
+  padding-bottom: 20px;
 }
 
-ul{
-
-    padding-inline-start: 0;
+ul {
+  padding-inline-start: 0;
 }
 
-p{
-    color: rgba(43,43,43, .75)
+p {
+  color: rgba(43, 43, 43, .75)
 }
 
-.difficulty{
-    color: rgb(117, 179, 250);
+.difficulty {
+  color: rgb(117, 179, 250);
 }
