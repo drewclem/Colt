@@ -7,19 +7,22 @@ class Form extends Component {
     constructor(props){
         super(props);
         this.state={
-            title: props.title,
-            difficulty: props.difficulty,
-            link: props.link,
-            email: props.email,
-            description: props.description
+            posts: props.posts
         };
+
         this.submitChange = this.submitChange.bind(this);
     }
 
     submitChange(event){
         event.preventDefault();
 
-        console.log(this.refs)
+        this.setState({
+            posts: this.state.posts.concat({
+                title: this.refs.title.value,
+                difficulty: this.refs.difficulty.value,
+                description: this.refs.description.value
+            })
+        })
     }
     
 
@@ -46,6 +49,7 @@ class Form extends Component {
                                 className="form-control"
                                 ref="difficulty"
                             >
+                                    <option disabled selected>Select a difficulty</option>
                                     <option value="Easy">Easy</option>
                                     <option value="Intermediate">Intermediate</option>
                                     <option value="Hard">Hard</option>
@@ -90,7 +94,8 @@ class Form extends Component {
                                 type="submit"
                                 value="Submit"
                                 className="btn btn-danger form-control"
-                            >Submit</button>
+                            >Submit
+                            </button>
                         </div>
                     </div>
                 </form>

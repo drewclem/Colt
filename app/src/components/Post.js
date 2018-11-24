@@ -7,9 +7,9 @@ class Post extends Component {
         return(
             <div>
                 <li>
-                    <h3>Test Name</h3>
-                    <p className="difficulty">Easy</p>
-                    <p>Here is a description that is a little longer than the last one just to see how a longer paragraph/sentence looks.</p>
+                    <h3>{this.props.title}</h3>
+                    <p className="difficulty">{this.props.difficulty}</p>
+                    <p>{this.props.description}</p>
                     <p className="btn btn-success btn-small">Take Project</p>
                 </li>
             </div>
