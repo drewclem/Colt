@@ -15,3 +15,7 @@ label {
 .blue-btn {
   background-color: red;
 }
+
+textarea{
+  line-height: 1.5
+}

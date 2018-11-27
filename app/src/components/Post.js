@@ -8,7 +8,7 @@ class Post extends Component {
             <div>
                 <li>
                     <h3>{this.props.title}</h3>
-                    <p className="difficulty">{this.props.difficulty}</p>
+                    <p className="difficulty">Difficulty: {this.props.difficulty}</p>
                     <p>{this.props.description}</p>
                     <p className="btn btn-success btn-small">Take Project</p>
                 </li>

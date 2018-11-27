@@ -36,7 +36,7 @@ class Form extends Component {
   render () {
     return (
       <div>
-        <form className='form col-md-5' onSubmit={this.submitChange}>
+        <form className='form col-md-5'>
           <div className='row'>
             <div className='form-group col-xs-9'>
               <label>Project Title:</label>
@@ -51,12 +51,6 @@ class Form extends Component {
 
             <div className='form-group col-xs-4'>
               <label>Difficulty Level:</label>
-              {/*
-                Since you're using 'uncontrolled' values, you want to use defaultValue to
-                set the initial value, which is what I added to your select input.
-
-                Ref: https://reactjs.org/docs/uncontrolled-components.html#default-values
-                */}
               <select
                 name='difficulty'
                 className='form-control'
@@ -93,13 +87,24 @@ class Form extends Component {
               />
             </div>
 
+            <div className='form-group col-xs-6'>
+                <label>Languages Used:</label>
+                <input
+                  type="text"
+                  ref="language"
+                  className="form-control"
+                  placeholder='Programming Languages Used'
+                />
+            </div>
+
             <div className='form-group col-xs-12'>
               <label>Issue Description:</label>
               <textarea
                 name='description'
                 className='form-control'
                 ref='description'
-                placeholder='Please provide a short description of the project issue.'
+                placeholder='Please provide a description of the project issue.'
+                rows="8"
               />
             </div>
 
