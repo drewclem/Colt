@@ -6,17 +6,6 @@ import PostData from '../data/posts.json'
 
 class List extends Component {
   render () {
-    /*
-        In order for your child component (List) to have access to your posts from the parent component
-        (Form) you have to pass it down in the form of a prop.
-
-        So here^ we destructure it, then map over it inside your UL.
-    */
-    /*
-        Anytime you map over an array in React, you have to add a key prop.
-        I went ahead an added it to your <Post /> and I also used the singular (post) instead of index
-        so that it's easier to read for future developers who work on this.
-    */
     return (
       <div className='list col-md-7'>
         <h2>Available Projects</h2>

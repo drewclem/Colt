@@ -4,36 +4,29 @@ import '../css/bootstrap/css/bootstrap.min.css'
 import List from './List'
 
 class Form extends Component {
-  constructor (props) {
-    super(props)
+  constructor () {
+    super()
     this.state = {
-      /*
-        You're not passing any props to Form inside App.js
-        so I'm changing this to an empty array because props.posts isn't defined.
-      */
-      posts: []
+      posts: [],
+      email:{
+        recipient: '',
+        sender: '',
+        subject:'',
+        text:'',
+      }
     }
-
-    this.submitChange = this.submitChange.bind(this)
+   // this.submitChange = this.submitChange.bind(this)
   }
 
-  submitChange (event) {
-    event.preventDefault()
-    // Create a new post based off form values.
-    const post = {
-      title: this.refs.title.value,
-      difficulty: this.refs.difficulty.value,
-      description: this.refs.description.value
-    }
-    // Concat so it creates a new aarray and adds element
-    const updatedPosts = this.state.posts.concat(post)
-    // Update state
-    this.setState({
-      posts: updatedPosts
-    })
+  sendEmail = _ => {
+    const { email } = this.state;
+    fetch(`http://127.0.0.1:4000/send-email?recipient=${email.recipient}&sender=${email.sender}&subject=${email.subject}&text=${email.text}`)
+      .catch(err => console.log(err))
   }
 
   render () {
+    const { email } = this.state;
+
     return (
       <div>
         <form className='form col-md-5'>
@@ -65,9 +58,10 @@ class Form extends Component {
             </div>
 
             <div className='form-group col-xs-8'>
-              <label>Github Link:</label>
+              <label>Recipient:</label>
               <input
-                name='link'
+                value= {email.recipient}
+                onChange= {e => this.setState({email: {...email, recipient: e.target.value} })}
                 type='text'
                 ref='link'
                 className='form-control'
@@ -77,10 +71,10 @@ class Form extends Component {
             </div>
 
             <div className='form-group col-xs-6'>
-              <label>Email:</label>
+              <label>Sender:</label>
               <input
-                name='email'
-                type='email'
+                value={email.sender}
+                onChange= {e => this.setState({email: {...email, sender: e.target.value} })}
                 ref='email'
                 className='form-control'
                 placeholder='Please enter a vaild email'
@@ -88,9 +82,11 @@ class Form extends Component {
             </div>
 
             <div className='form-group col-xs-6'>
-                <label>Languages Used:</label>
+                <label>Subject:</label>
                 <input
                   type="text"
+                  value= {email.subject}
+                  onChange= {e => this.setState({email: {...email, subject: e.target.value} })}
                   ref="language"
                   className="form-control"
                   placeholder='Programming Languages Used'
@@ -98,9 +94,10 @@ class Form extends Component {
             </div>
 
             <div className='form-group col-xs-12'>
-              <label>Issue Description:</label>
+              <label>Text:</label>
               <textarea
-                name='description'
+                value= {email.text}
+                onChange= {e => this.setState({email: {...email, text: e.target.value} })}
                 className='form-control'
                 ref='description'
                 placeholder='Please provide a description of the project issue.'
@@ -111,8 +108,9 @@ class Form extends Component {
             <div className='form-group col-xs-3'>
               <button
                 type='submit'
-                value='Submit'
+                value='submit'
                 className='btn btn-danger form-control'
+                onClick= {this.sendEmail}
               >Submit
               </button>
             </div>
