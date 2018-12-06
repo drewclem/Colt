@@ -12,17 +12,23 @@ class Form extends Component {
         recipient: '',
         sender: '',
         subject:'',
-        text:'',
+        text:''
       }
     }
    // this.submitChange = this.submitChange.bind(this)
   }
 
   sendEmail = _ => {
-    const { email } = this.state;
+    const email = this.state.email
+    
     fetch(`http://127.0.0.1:4000/send-email?recipient=${email.recipient}&sender=${email.sender}&subject=${email.subject}&text=${email.text}`)
-      .catch(err => console.log(err))
+      .catch(err => console.error(err));
+    console.log(this.state.email)
   }
+
+  //eventChange = _ => {
+    //console.log(this.state.email)
+  //}
 
   render () {
     const { email } = this.state;
