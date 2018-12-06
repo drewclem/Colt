@@ -15,17 +15,17 @@ app.get('/', (req, res) =>{
 
 //email page
 app.get('/send-email', (req, res) => {
-  const{ recipient, sender, subject, text } = req.query;
+  const { recipient, sender, subject, text } = req.query;
 
   const msg ={
-    to: recipient,
-    from: sender,
+    to: 'drewclementsdesign@gmail.com',
+    from: 'coltxp31@gmail.com',
     subject: subject,
     text: text
   }
 
   sgMail.send(msg)
-  .then((msg) => console.log(text))
+    .then((msg) => console.log(text));
 })
 
 
