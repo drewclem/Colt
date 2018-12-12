@@ -15,12 +15,12 @@ app.get('/', (req, res) =>{
 
 //email page
 app.get('/send-email', (req, res) => {
-  const { recipient, sender, subject, text } = req.query;
+  const { sender, text } = req.query;
 
   const msg ={
     to: 'drewclementsdesign@gmail.com',
-    from: 'coltxp31@gmail.com',
-    subject: subject,
+    from: sender,
+    subject: 'Colt Project Listing',
     text: text
   }
 
