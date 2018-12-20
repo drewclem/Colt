@@ -7,7 +7,6 @@ class Form extends Component {
   constructor () {
     super()
     this.state = {
-      posts: [],
       email:{
         recipient: '',
         sender: '',
@@ -21,19 +20,20 @@ class Form extends Component {
         }
       }
     }
-   // this.submitChange = this.submitChange.bind(this)
   }
+
+  //inputCheck = () => {
+    //console.log(this.state.email.text)
+  //}
 
   sendEmail = _ => {
     const email = this.state.email;
-    
+
     fetch(`http://127.0.0.1:4000/send-email?recipient=${email.recipient}&sender=${email.sender}&subject=${email.subject}&text=${email.text}`)
       .catch(err => console.error(err));
-    console.log(this.state.email)
   }
 
   render () {
-    const { text } = this.state.email;
     const { email } = this.state;
 
     return (
@@ -41,13 +41,17 @@ class Form extends Component {
 
         <List posts={this.state.posts} />
 
-        <form className='form col-md-5'>
+        <form className='form col-md-5' onChange={this.inputCheck}>
           <div className='row'>
             <div className='form-group col-xs-9'>
               <label>Project Title:</label>
               <input
-                value= {this.state.value}
-                onChange= {e => this.setState({text: {...text, title: e.target.value} })}
+                value= {email.text.title}
+                onChange= {e => this.setState({
+                  email: {text: {
+                    ...this.state.email.text, title: e.target.value
+                  }}
+                })}
                 className='form-control'
                 placeholder='Please enter a name for the project'
                 type='text'
@@ -57,8 +61,13 @@ class Form extends Component {
             <div className='form-group col-xs-4'>
               <label>Difficulty Level:</label>
               <select
-                value= {this.state.value}
-                onChange= {e => this.setState({text: {...text, difficulty: e.target.value} })}
+                value= {email.text.difficulty}
+                type="select"
+                onChange= {e => this.setState({
+                  email: { text: {
+                    ...this.state.email.text, difficulty: e.target.value
+                  }}
+                })}
                 name='difficulty'
                 className='form-control'
               >
@@ -72,9 +81,14 @@ class Form extends Component {
             <div className='form-group col-xs-8'>
               <label>Github Link:</label>
               <input
-                value= {this.state.value}
-                onChange= {e => this.setState({text: {...text, link: e.target.value} })}
-                type='text'
+                value= {email.text.link}
+                onChange= {e => this.setState({
+                  email: { text: {
+                      ...this.state.email.text, link: e.target.value
+                    }
+                  }
+                })}
+                type='text'                       
                 className='form-control'
                 placeholder='Link to github repo'
               />
@@ -84,7 +98,7 @@ class Form extends Component {
             <div className='form-group col-xs-6'>
               <label>Email:</label>
               <input
-                value={email.sender}
+                value= {email.sender}
                 onChange= {e => this.setState({email: {...email, sender: e.target.value} })}
                 className='form-control'
                 placeholder='Please enter a vaild email'
@@ -94,9 +108,13 @@ class Form extends Component {
             <div className='form-group col-xs-6'>
                 <label>Lanauges Used:</label>
                 <input
+                  value= {email.text.languages}
                   type="text"
-                  value= {this.state.value}
-                  onChange= {e => this.setState({text: {...text, languages: e.target.value} })}
+                  onChange= {e => this.setState({
+                    email: { text: {
+                      ...this.state.email.text, languages: e.target.value
+                    }}
+                  })}
                   className="form-control"
                   placeholder='Programming Languages Used'
                 />
@@ -105,8 +123,12 @@ class Form extends Component {
             <div className='form-group col-xs-12'>
               <label>Description:</label>
               <textarea
-                value= {this.state.value}
-                onChange= {e => this.setState({text: {...text, description: e.target.value} })}
+                value= {email.text.description}
+                onChange= {e => this.setState({
+                  email: {text: {
+                    ...this.state.email.text, description: e.target.value
+                  }}
+                })}
                 className='form-control'
                 placeholder='Please provide a description of the project issue.'
                 rows="8"
