@@ -18,16 +18,17 @@ app.get('/send-email', (req, res) => {
   const { sender, text } = req.query;
 
   const msg ={
-    to: 'drewclementsdesign@gmail.com',
+    to: 'coltxp31@gmail.com',
     from: sender,
     subject: 'Colt Project Listing',
     text: text
   }
 
   sgMail.send(msg)
-    .then((msg) => console.log(text));
+  .catch(err => { console.log(err.response.body.errors) })
+  console.log('message sent');
 })
 
 
 
-app.listen(4000, () => console.log('running on port 4000'));
+app.listen(process.env.Port, () => console.log('Server Running'));

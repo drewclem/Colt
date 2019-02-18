@@ -1,24 +1,27 @@
 import React, { Component } from 'react'
-import '../css/bootstrap/css/bootstrap.min.css'
-import '../css/List.css'
 import Post from './Post'
 import PostData from '../data/posts.json'
 
 class List extends Component {
   render () {
     return (
-      <div className='list col-md-7'>
-        <h2>Available Projects</h2>
-        <ul>
-          {PostData.map((post, index) => {
-            return <Post
-              key={index}
-              title={post.title}
-              difficulty={post.difficulty}
-              description={post.description}
-            />
-          })}
-        </ul>
+      <div className='List row'>
+        <div className="col-sm-8 board-list">
+          <h2>Project Board</h2>
+          <div className='separator-red'></div>
+          <ul>
+            {PostData.map((post, index) => {
+              return <Post
+                key={index}
+                title={post.title}
+                difficulty={post.difficulty}
+                description={post.description}
+                url={post.url}
+                languages={post.languages}
+              />
+            })}
+          </ul>
+        </div>
       </div>
     )
   }

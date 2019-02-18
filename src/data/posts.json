@@ -3,18 +3,24 @@
         "id": 1,
         "title": "Placeholder",
         "difficulty": "Easy",
-        "description": "This is a short placeholder paragraph to simulate what actual project content may look like. As of now there is no limit to the amount of characters that can be in a project description, which may no be a bad thing because we want the project owners to have the room to be as descriptive as possible."
+        "languages": "CSS, HTML, Javascript",
+        "description": "This is a short placeholder paragraph to simulate what actual project content may look like. As of now there is no limit to the amount of characters that can be in a project description, which may no be a bad thing because we want the project owners to have the room to be as descriptive as possible.",
+        "url": "https://github.com/drewclem/Colt"
     },
     {
         "id": 2,
-        "title": "A simple css fix",
+        "title": "Example 2",
         "difficulty": "Easy",
-        "description": "My client has decided they want the background color of the buttons to change across the board. All you have to do is find the css declaration for btn-main and change the color to #f4f4f4."
+        "languages": "CSS, HTML, Javascript",
+        "description": "My client has decided they want the background color of the buttons to change across the board. All you have to do is find the css declaration for btn-main and change the color to #f4f4f4. My client has decided they want the background color of the buttons to change across the board. All you have to do is find the css declaration for btn-main and change the color to #f4f4f4. My client has decided they want the background color of the buttons to change across the board. All you have to do is find the css declaration for btn-main and change the color to #f4f4f4.",
+        "url": "https://github.com/drewclem/Colt"
     },
     {
         "id": 3,
         "title": "Add password reset module",
         "difficulty": "Hard",
-        "description": "Site currently doesn't have way for users to reset passwords for their account. For now, I need someone to build a form that sends me an email with their account name, old password, and new password and I'll manually change it in the database."
+        "languages": "CSS, HTML, Javascript",
+        "description": "Site currently doesn't have way for users to reset passwords for their account. For now, I need someone to build a form that sends me an email with their account name, old password, and new password and I'll manually change it in the database.",
+        "url": "https://github.com/drewclem/Colt"
     }
 ]
