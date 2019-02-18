@@ -22,7 +22,7 @@ class Form extends Component {
   sendEmail = _ => {
     const email = this.state.email;
 
-    fetch(`http://127.0.0.1:4000/send-email?recipient=${email.recipient}&sender=${email.sender}&subject=${email.subject}&text=${email.text.title}\n\n${email.text.difficulty}\n\n${email.text.languages}\n\n${email.text.description}\n\n${email.text.link}`)
+    fetch(`https://coltxp-backend.herokuapp.com/send-email?recipient=${email.recipient}&sender=${email.sender}&subject=${email.subject}&text=${email.text.title}\n\n${email.text.difficulty}\n\n${email.text.languages}\n\n${email.text.description}\n\n${email.text.link}`)
       .catch(err => console.error(err.response));
   }
 
