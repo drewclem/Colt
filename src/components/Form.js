@@ -1,113 +1,123 @@
-import React, { Component } from 'react'
-import '../css/Form.css'
-import '../css/bootstrap/css/bootstrap.min.css'
-import List from './List'
+import React, { Component } from 'react';
 
 class Form extends Component {
   constructor () {
     super()
     this.state = {
-      posts: [],
       email:{
         recipient: '',
         sender: '',
         subject:'',
-        text:''
+        text:{
+          title: '',
+          difficulty: '',
+          link: '',
+          languages: '',
+          description: ''
+        }
       }
     }
-   // this.submitChange = this.submitChange.bind(this)
   }
 
   sendEmail = _ => {
-    const email = this.state.email
-    
-    fetch(`http://127.0.0.1:4000/send-email?recipient=${email.recipient}&sender=${email.sender}&subject=${email.subject}&text=${email.text}`)
-      .catch(err => console.error(err));
-    console.log(this.state.email)
-  }
+    const email = this.state.email;
 
-  //eventChange = _ => {
-    //console.log(this.state.email)
-  //}
+    fetch(`http://127.0.0.1:4000/send-email?recipient=${email.recipient}&sender=${email.sender}&subject=${email.subject}&text=${email.text.title}\n\n${email.text.difficulty}\n\n${email.text.languages}\n\n${email.text.description}\n\n${email.text.link}`)
+      .catch(err => console.error(err.response));
+  }
 
   render () {
     const { email } = this.state;
 
     return (
       <div>
-        <form className='form col-md-5'>
+
+        <form className='Form col-md-6' onChange={this.inputCheck}>
           <div className='row'>
             <div className='form-group col-xs-9'>
               <label>Project Title:</label>
               <input
-                name='title'
+                value= {email.text.title}
+                onChange= {e => this.setState({
+                  email: {text: {
+                    ...this.state.email.text, title: e.target.value
+                  }}
+                })}
                 className='form-control'
                 placeholder='Please enter a name for the project'
                 type='text'
-                ref='title'
               />
             </div>
 
-            <div className='form-group col-xs-4'>
+            <div className='form-group col-xs-6'>
               <label>Difficulty Level:</label>
-              <select
-                name='difficulty'
-                className='form-control'
-                ref='difficulty'
-                defaultValue='Select a difficulty'
-              >
-                <option disabled value='Select a difficulty'>Select a difficulty</option>
-                <option value='Easy'>Easy</option>
-                <option value='Intermediate'>Intermediate</option>
-                <option value='Hard'>Hard</option>
-              </select>
-            </div>
-
-            <div className='form-group col-xs-8'>
-              <label>Recipient:</label>
               <input
-                value= {email.recipient}
-                onChange= {e => this.setState({email: {...email, recipient: e.target.value} })}
-                type='text'
-                ref='link'
+                value= {email.text.difficulty}
+                onChange= {e => this.setState({
+                  email: { text: {
+                      ...this.state.email.text, difficulty: e.target.value
+                    }
+                  }
+                })}
+                type='text'                       
                 className='form-control'
-                placeholder='Link to github repo'
-              />
-
-            </div>
-
-            <div className='form-group col-xs-6'>
-              <label>Sender:</label>
-              <input
-                value={email.sender}
-                onChange= {e => this.setState({email: {...email, sender: e.target.value} })}
-                ref='email'
-                className='form-control'
-                placeholder='Please enter a vaild email'
+                placeholder='Beginner Intermediate Hard'
               />
             </div>
 
             <div className='form-group col-xs-6'>
-                <label>Subject:</label>
+                <label>Languages Used:</label>
                 <input
+                  value= {email.text.languages}
                   type="text"
-                  value= {email.subject}
-                  onChange= {e => this.setState({email: {...email, subject: e.target.value} })}
-                  ref="language"
+                  onChange= {e => this.setState({
+                    email: { text: {
+                      ...this.state.email.text, languages: e.target.value
+                    }}
+                  })}
                   className="form-control"
                   placeholder='Programming Languages Used'
                 />
             </div>
 
             <div className='form-group col-xs-12'>
-              <label>Text:</label>
-              <textarea
-                value= {email.text}
-                onChange= {e => this.setState({email: {...email, text: e.target.value} })}
+              <label>Github Link:</label>
+              <input
+                value= {email.text.link}
+                onChange= {e => this.setState({
+                  email: { text: {
+                      ...this.state.email.text, link: e.target.value
+                    }
+                  }
+                })}
+                type='url'                       
                 className='form-control'
-                ref='description'
+                placeholder='Link to github repo'
+              />
+            </div>
+
+            <div className='form-group col-xs-12'>
+              <label>Description:</label>
+              <textarea
+                value= {email.text.description}
+                onChange= {e => this.setState({
+                  email: {text: {
+                    ...this.state.email.text, description: e.target.value
+                  }}
+                })}
+                className='form-control'
                 placeholder='Please provide a description of the project issue.'
                 rows="8"
+              />
+            </div>
+
+            <div className='form-group col-xs-10'>
+              <label>Email:</label>
+              <input
+                value= {email.sender}
+                onChange= {e => this.setState({email: {...email, sender: e.target.value} })}
+                className='form-control'
+                placeholder='Please enter a vaild email'
               />
             </div>
 
@@ -115,15 +125,13 @@ class Form extends Component {
               <button
                 type='submit'
                 value='submit'
-                className='btn btn-danger form-control'
+                className='btn btn-red'
                 onClick= {this.sendEmail}
               >Submit
               </button>
             </div>
           </div>
         </form>
-
-        <List posts={this.state.posts} />
 
       </div>
     )

@@ -1,29 +1,358 @@
-
-.App {
-  color: rgb(43, 43, 43);
+:root{
+  --red: rgb(233,71,79);
+  --dark-blue: rgb(31, 65, 97);
+  --dark-blue-trans: rgba(31, 65, 97, 0.856);
+  --light-blue: rgb(82,187,229);
+  --green: rgb(189, 231, 64);
+  --white: rgb(255, 255, 255);
+  --black: rgb(48, 48, 48);
+  --light-black: rgba(48,48,48, 0.80);
 }
 
-.App-header {
-  background-color: #465472;
-  color: rgb(103, 220, 228);
-  padding: 10px 15px;
+h1, h2, h3, h4, h5, h6, label {
+  font-family: 'Open Sans', sans-serif !important;
 }
 
-.logo {
-  color: rgb(103, 220, 228);
+.App h1,.App h2, .App h3, label {
+  font-weight: 700;
+}
+
+.App{
+  font-size: 16px;
+}
+
+p{
+  line-height: 2;
+}
+
+@media (max-width: 768px){
+  .App{
+    font-size: 14px;
+  }
+}
+/*---------------------------------------------
+-----------------------------------------------
+Nav Styles
+-----------------------------------------------
+---------------------------------------------*/
+.Nav {
+  background-color: var(--white);
+  height: 60px;
+  box-shadow: 0px 0px 50px rgba(33, 33, 33, 0.25);
+  position: absolute;
+  z-index: 1;
+  margin: 0;
+}
+
+.nav-logo{
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 2.5;
+  padding-left: 20px;
+  color: var(--black);
+}
+
+.nav-logo:hover {
+  color: var(--black);
+  text-decoration: none;
+}
+
+.Nav .main-menu{
+  list-style: none;
+  float: right;
+  padding: 0;
+  margin: 0;
+}
+
+.main-menu li{
+  display: inline-block;
+  position: relative;
+  text-align: center;
+}
+
+.main-menu li a{
+  color: var(--light-black);
+  line-height: 60px;
+  padding: 20px 40px;
+  position: relative;
+  width: 100%;
+  transition: ease-in 100ms;
+}
+
+.main-menu li a:hover{
+  color: var(--black);
+  text-decoration: none;
+  background-color: rgba(33, 33, 33, 0.1);
+}
+
+  @media (max-width: 768px){
+    .nav-logo{
+      padding: 0;
+    }
+
+    .Nav{
+      font-size: 16px;
+    }
+
+    .Nav .main-menu{
+      background-color: white;
+      position: relative;
+      top: -180px;
+      transition: cubic-bezier(0.165, 0.84, 0.44, 1) 250ms;
+    }
+
+    .Nav .main-menu li{
+      display: block;
+    }
+  }
+
+  @media (min-width: 768px){
+    .Nav button{
+      display: none;
+    }
+  }
+
+  .nav-toggle{
+    top: 60px !important;
+  }
+
+  .Nav button{
+    font-size: 24px;
+    position: absolute;
+    transform: translatey(15px);
+    right: 30px;
+    border: none;
+    background-color: none;
+  }
+
+/*---------------------------------------------
+-----------------------------------------------
+Header Styles
+-----------------------------------------------
+---------------------------------------------*/
+.hero-wrapper{
+  background-image: url(../img/homeBG.jpg);
+  background-size: cover;
+  height: 100vh;
+}
+
+.hero-copy h1{
+  font-size: 72px;
+  font-weight: 700;
+  width: 60%;
+  padding-bottom: 20px;
+}
+
+.separator{
+  border-bottom: 5px solid var(--light-blue);
+  width: 100px;
+  margin-bottom: 20px;
+}
+
+.hero-copy .desc{
+  width: 60%;
+  margin-bottom: 40px;
+}
+
+.hero-copy{
+  color: white;
+  padding-top: 15vh;
+}
+
+.hero-copy button{
+  transition: cubic-bezier(0.25, -0.25, 0.5, 1.5) 250ms;
+}
+
+.hero-copy button a{
+  color: var(--white);
+}
+
+.hero-copy button a:hover{
+  text-decoration: none;
+}
+
+.hero-copy button:hover{
+  color: var(--white);
+  text-decoration: none;
+  transform: scale(1.125);
+}
+
+/*---------------------------------------------
+-----------------------------------------------
+Header Media Queries Styles
+-----------------------------------------------
+---------------------------------------------*/
+
+    @media (max-width: 990px){
+      .hero-copy h1{
+        font-size: 54px;
+      }
+    }
+
+    @media (max-width: 768px){
+      .hero-wrapper{
+        height: 500px;
+      }
+
+      .hero-copy{
+        padding-top: 10%;
+      }
+
+      .hero-copy h1{
+        width: 75%;
+        font-size: 48px;
+      }
+
+      .hero-copy .desc{
+        width: 75%;
+      }
+    }
+
+    @media (max-width: 540px){
+      .hero-copy h1,
+      .hero-copy .desc{
+        width: 100%;
+      }
+
+      .hero-copy h1{
+        font-size: 36px;
+      }
+
+      .hero-copy .separator{
+        width: 50px;
+      }
+    }
+
+/*---------------------------------------------
+-----------------------------------------------
+How Styles
+-----------------------------------------------
+---------------------------------------------*/
+.how-wrapper{
+  background-color: var(--red);
+  color: var(--white);
+  padding: 20px 40px !important;
+  transform: translateY(-150px);
+}
+
+.how-separator{
+  border-bottom: 3px solid var(--dark-blue);
+  width: 50px;
+  margin-bottom: 20px;
+}
+
+.How span{
   font-weight: 700;
   font-size: 24px;
 }
 
-.App-link {
-  color: #61dafb;
+@media (max-width: 768px){
+  .how-wrapper{
+    transform: translateY(0);
+    padding: 20px 10px !important;
+  }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/*---------------------------------------------
+-----------------------------------------------
+About Styles
+-----------------------------------------------
+---------------------------------------------*/
+.About{
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+/*---------------------------------------------
+-----------------------------------------------
+Contact Styles
+-----------------------------------------------
+---------------------------------------------*/
+.Contact .gh-link{
+  font-size: 18px;
+  color: var(--dark-blue-trans);
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1) 250ms;
+}
+
+.Contact .gh-link:hover{
+  color: var(--dark-blue);
+  transform: scale(1.125);
+}
+
+.Contact {
+  margin-bottom: 40px;
+}
+
+/*---------------------------------------------
+-----------------------------------------------
+Button Styles
+-----------------------------------------------
+---------------------------------------------*/
+
+.btn{
+  padding: 10px 20px !important;
+  box-shadow: 5px 5px 10px rgba(33, 33, 33, 0.125);
+  transition: cubic-bezier(0.25, -0.25, 0.5, 1.5) 250ms;
+  border-radius: 10px;
+}
+
+.btn:hover{
+  transform: scale(1.05);
+}
+
+.btn-large{
+  padding: 15px 35px !important;
+  font-size: 24px;
+}
+
+.btn-red{
+  background-color: var(--red);
+  color: var(--white);
+}
+
+.btn-blue{
+  background-color: var(--white);
+  border: 1px solid rgba(31, 65, 97, 0.356) !important;
+}
+
+.btn-blue:hover{
+  background-color: var(--white);
+  transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 500ms;
+}
+
+.btn-blue a{
+  color: var(--dark-blue);
+}
+
+.btn-blue a:hover{
+  color: var(--dark-blue);
+  text-decoration: none;
+}
+
+@media (min-width: 768px){
+  .board-list{
+    box-shadow: 20px 0px 30px rgba(34, 34, 34, 0.05);
   }
-  to {
-    transform: rotate(360deg);
+}
+
+.separator-red{
+  border-bottom: 3px solid var(--red);
+  width: 50px;
+  margin-bottom: 20px;
+}
+
+footer{
+  text-align: center;
+  background-color: rgb(241, 241, 241);
+  color: var(--dark-blue-trans);
+  padding: 10px;
+  height: 50px;
+  margin-right: 0;
+  margin-left: 0;
+}
+
+@media (min-width: 768px){
+  footer{
+    margin-top: 40px;
   }
 }
