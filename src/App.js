@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import {
   HashRouter,
   Route,
-  BrowserRouter as Router
 } from 'react-router-dom';
 import './css/App.css';
 import './css/bootstrap/css/bootstrap.min.css';

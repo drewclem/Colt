@@ -51,7 +51,7 @@ class Form extends Component {
               />
             </div>
 
-            <div className='form-group col-xs-6'>
+            <div className='form-group col-sm-6'>
               <label>Difficulty Level:</label>
               <input
                 value= {email.text.difficulty}
@@ -68,7 +68,7 @@ class Form extends Component {
               />
             </div>
 
-            <div className='form-group col-xs-6'>
+            <div className='form-group col-sm-6'>
                 <label>Languages Used:</label>
                 <input
                   value= {email.text.languages}
