@@ -32,7 +32,8 @@ class Form extends Component {
     return (
       <div>
 
-        <form className='Form col-md-6' onChange={this.inputCheck}>
+        <form className='Form col-md-6' name='project-submission' method='POST' data-netlify='true' netlify-honeypot='bot-field' onChange={this.inputCheck}>
+          <input type='hidden' name='form-name' value='project-submission'/>
           <div className='row'>
             <div className='form-group col-xs-9'>
               <label>Project Title:</label>
@@ -46,6 +47,7 @@ class Form extends Component {
                 className='form-control'
                 placeholder='Please enter a name for the project'
                 type='text'
+                name='projectTitle'
               />
             </div>
 
@@ -62,6 +64,7 @@ class Form extends Component {
                 type='text'                       
                 className='form-control'
                 placeholder='Beginner Intermediate Hard'
+                name='difficulty'
               />
             </div>
 
@@ -77,6 +80,7 @@ class Form extends Component {
                   })}
                   className="form-control"
                   placeholder='Programming Languages Used'
+                  name='languages'
                 />
             </div>
 
@@ -90,9 +94,10 @@ class Form extends Component {
                     }
                   }
                 })}
-                type='url'                       
+                type='text'                       
                 className='form-control'
                 placeholder='Link to github repo'
+                name='link'
               />
             </div>
 
@@ -108,6 +113,7 @@ class Form extends Component {
                 className='form-control'
                 placeholder='Please provide a description of the project issue.'
                 rows="8"
+                name='description'
               />
             </div>
 
@@ -118,6 +124,7 @@ class Form extends Component {
                 onChange= {e => this.setState({email: {...email, sender: e.target.value} })}
                 className='form-control'
                 placeholder='Please enter a vaild email'
+                name='sender'
               />
             </div>
 
@@ -126,7 +133,7 @@ class Form extends Component {
                 type='submit'
                 value='submit'
                 className='btn btn-red'
-                onClick= {this.sendEmail}
+                //onClick= {this.sendEmail}
               >Submit
               </button>
             </div>

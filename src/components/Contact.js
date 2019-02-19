@@ -9,21 +9,21 @@ class Contact extends Component {
         <h2>Contact</h2>
         <div className='separator-red'></div>
         <div className='row'>
-          <form className='col-sm-5'>
+          <form className='col-sm-5' name='feedback' method='post' data-netlify='true' netlify-honeypot='bot-field'>
+            <input type='hidden' name='form-name' value='feedback'/>
             <div className='form-group'>
                 <label>Name:</label>
-                <input className='form-control'/>
+                <input className='form-control' name='name' placeholder='Richard Hendricks'/>
             </div>
             <div className='form-group'>
                 <label>Email:</label>
-                <input className='form-control'/>
+                <input className='form-control' name='email' placeholder='richard@piedpiper.com'/>
             </div>
             <div className='form-group'>
                 <label>Comment:</label>
-                <textarea className='form-control'/>
+                <textarea className='form-control' name='comment' placeholder='Jared still speaks german in his sleep and Dinesh still talks about his Tesla.'/>
             </div>
-            <button type='submit' 
-                    className='btn btn-red'>Submit</button>
+            <button type='submit' className='btn btn-red'>Submit</button>
           </form>
 
           <div className="your-role col-md-6">

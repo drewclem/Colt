@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {
+  HashRouter,
   Route,
   BrowserRouter as Router
 } from 'react-router-dom';
@@ -14,7 +15,7 @@ import Nav from './components/Nav';
 class App extends Component {
   render() {
     return (
-      <Router>
+      <HashRouter>
         <div className='App container-fluid'>
           <Nav />
 
@@ -27,7 +28,7 @@ class App extends Component {
             <p>Copyright &copy; 2019 ColtXP</p>
           </footer>
         </div>
-      </Router>
+      </HashRouter>
     );
   }
 }
