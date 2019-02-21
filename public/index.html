@@ -22,15 +22,20 @@
     <title>Colt | Guided OS Projects</title>
   </head>
   <body>
-    <form name='feedback' method='post' data-netlify='true' netlify-honeypot='bot-field' class='hidden'>
+    <form name='feedback' method='post' data-netlify='true' netlify-honeypot='bot-field' hidden>
       <input type='text' name='name'/>
       <input type='text' name='email'/>
       <textarea type='text' name='comment'></textarea>
     </form>
 
-    <form name='project-submission' method='post' data-netlify="true" netlify-honeypot='bot-field' class='hidden'>
+    <form name='project-submission' method='post' data-netlify="true" netlify-honeypot='bot-field' hidden>
       <input type='text' name='projectTitle'/>
-      <input type='text' name='difficulty'/>
+      <!--<input type='text' name='difficulty'/>-->
+      <select type='select' name='difficulty'>
+        <option value='beginner'></option>
+        <option value='intermediate'></option>
+        <option value='hard'></option>
+      </select>
       <input type='text' name='languages'/>
       <input type='text' name='link'/>
       <textarea type='text' name='description'></textarea>

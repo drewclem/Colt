@@ -35,7 +35,7 @@ class Form extends Component {
         <form className='Form col-md-6' name='project-submission' method='POST' data-netlify='true' netlify-honeypot='bot-field' onChange={this.inputCheck}>
           <input type='hidden' name='form-name' value='project-submission'/>
           <div className='row'>
-            <div className='form-group col-xs-9'>
+            <div className='form-group col-md-9'>
               <label>Project Title:</label>
               <input
                 value= {email.text.title}
@@ -45,30 +45,22 @@ class Form extends Component {
                   }}
                 })}
                 className='form-control'
-                placeholder='Please enter a name for the project'
+                placeholder='Adding compression algorithm'
                 type='text'
                 name='projectTitle'
               />
             </div>
 
-            <div className='form-group col-sm-6'>
+            <div className='form-group col-md-6'>
               <label>Difficulty Level:</label>
-              <input
-                value= {email.text.difficulty}
-                onChange= {e => this.setState({
-                  email: { text: {
-                      ...this.state.email.text, difficulty: e.target.value
-                    }
-                  }
-                })}
-                type='text'                       
-                className='form-control'
-                placeholder='Beginner Intermediate Hard'
-                name='difficulty'
-              />
+              <select className='form-control' name='difficulty'>
+                <option value='beginner' selected>Beginner</option>
+                <option value='intermediate'>Intermediate</option>
+                <option value='hard'>Hard</option>
+              </select>
             </div>
 
-            <div className='form-group col-sm-6'>
+            <div className='form-group col-md-6'>
                 <label>Languages Used:</label>
                 <input
                   value= {email.text.languages}
@@ -79,7 +71,7 @@ class Form extends Component {
                     }}
                   })}
                   className="form-control"
-                  placeholder='Programming Languages Used'
+                  placeholder='HTML, PHP, JS, etc...'
                   name='languages'
                 />
             </div>
@@ -96,7 +88,7 @@ class Form extends Component {
                 })}
                 type='text'                       
                 className='form-control'
-                placeholder='Link to github repo'
+                placeholder='https://github.com/piedpiper'
                 name='link'
               />
             </div>
@@ -111,19 +103,19 @@ class Form extends Component {
                   }}
                 })}
                 className='form-control'
-                placeholder='Please provide a description of the project issue.'
+                placeholder='Please provide a description of the project.'
                 rows="8"
                 name='description'
               />
             </div>
 
-            <div className='form-group col-xs-10'>
+            <div className='form-group col-md-10'>
               <label>Email:</label>
               <input
                 value= {email.sender}
                 onChange= {e => this.setState({email: {...email, sender: e.target.value} })}
                 className='form-control'
-                placeholder='Please enter a vaild email'
+                placeholder='richard@piedpiper.com'
                 name='sender'
               />
             </div>

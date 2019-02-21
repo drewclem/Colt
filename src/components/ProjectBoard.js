@@ -4,9 +4,8 @@ import '../css/projectboard.css';
 import '../css/bootstrap/css/bootstrap.min.css';
 import List from './List'
 
-
-
 class ProjectBoard extends Component {
+
   render() {
     return (
       <div className="ProjectBoard container">

@@ -21,6 +21,15 @@ h1, h2, h3, h4, h5, h6, label {
   font-size: 16px;
 }
 
+a:visited,
+a:active{
+  text-decoration: none !important;
+}
+
+.wrapper {
+  min-height: calc(100vh - 150px);
+}
+
 p{
   line-height: 2;
 }
@@ -42,6 +51,11 @@ Nav Styles
   position: absolute;
   z-index: 1;
   margin: 0;
+}
+
+.active{
+  border-bottom: 2px solid var(--light-blue);
+  background-color: rgba(33, 33, 33, 0.075);
 }
 
 .nav-logo{
@@ -82,7 +96,8 @@ Nav Styles
 .main-menu li a:hover{
   color: var(--black);
   text-decoration: none;
-  background-color: rgba(33, 33, 33, 0.1);
+  background-color: rgba(33, 33, 33, 0.075);
+  border-bottom: 2px solid var(--light-blue);
 }
 
   @media (max-width: 768px){
@@ -97,7 +112,7 @@ Nav Styles
     .Nav .main-menu{
       background-color: white;
       position: relative;
-      top: -180px;
+      top: -182px;
       transition: cubic-bezier(0.165, 0.84, 0.44, 1) 250ms;
     }
 
@@ -281,6 +296,12 @@ Contact Styles
 
 .Contact {
   margin-bottom: 40px;
+}
+
+@media (min-width: 768px){
+  .Contact form{
+    padding-right: 40px;
+  }
 }
 
 /*---------------------------------------------

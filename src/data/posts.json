@@ -1,26 +1,26 @@
 [
     {
         "id": 1,
-        "title": "Placeholder",
+        "title": "Example Post",
         "difficulty": "Easy",
         "languages": "CSS, HTML, Javascript",
-        "description": "This is a short placeholder paragraph to simulate what actual project content may look like. As of now there is no limit to the amount of characters that can be in a project description, which may no be a bad thing because we want the project owners to have the room to be as descriptive as possible.",
+        "description": "This is a short placeholder paragraph to simulate what actual project content may look like. Be as descriptive as you feel is necessary to properly describe the scope of the project work. You want to give a little background on the app first? Go for it! Want to cut right to the chase of what's needed? Have at it! Just make sure you have enough information for the potential colts to have a good iead of what is needed to complete the project.",
         "url": "https://github.com/drewclem/Colt"
     },
     {
         "id": 2,
-        "title": "Example 2",
+        "title": "Changing Global Button Colors",
         "difficulty": "Easy",
         "languages": "CSS, HTML, Javascript",
-        "description": "My client has decided they want the background color of the buttons to change across the board. All you have to do is find the css declaration for btn-main and change the color to #f4f4f4. My client has decided they want the background color of the buttons to change across the board. All you have to do is find the css declaration for btn-main and change the color to #f4f4f4. My client has decided they want the background color of the buttons to change across the board. All you have to do is find the css declaration for btn-main and change the color to #f4f4f4.",
+        "description": "THIS IS AN EXAMPLE POST. My client has decided they want the background color of the buttons to change across the board. All you have to do is find the css declaration for btn-main and change the color to #f4f4f4. My client has decided they want the background color of the buttons to change across the board. All you have to do is find the css declaration for btn-main and change the color to #f4f4f4. My client has decided they want the background color of the buttons to change across the board. All you have to do is find the css declaration for btn-main and change the color to #f4f4f4.",
         "url": "https://github.com/drewclem/Colt"
     },
     {
         "id": 3,
         "title": "Add password reset module",
         "difficulty": "Hard",
-        "languages": "CSS, HTML, Javascript",
-        "description": "Site currently doesn't have way for users to reset passwords for their account. For now, I need someone to build a form that sends me an email with their account name, old password, and new password and I'll manually change it in the database.",
+        "languages": "Elixir, Postgres",
+        "description": "THIS IS AN EXAMPLE POST. Site currently doesn't have way for users to reset passwords for their account. There is already a user accounts module in place so we'll just be adding the logic needed to send them through a secure path of resetting their password.",
         "url": "https://github.com/drewclem/Colt"
     }
 ]

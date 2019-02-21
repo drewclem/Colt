@@ -12,16 +12,19 @@ import Header from './components/Header';
 import Nav from './components/Nav';
 
 class App extends Component {
+
   render() {
     return (
       <HashRouter>
         <div className='App container-fluid'>
           <Nav />
 
-          <Route exact path='/' component={Header}/>
-          <Route path='/ProjectBoard' component={ProjectBoard} />
-          <Route path='/addproject' component={AddProject} />
-          <Route path='/contact' component={Contact} />
+          <div className='wrapper'>
+            <Route exact path='/' component={Header}/>
+            <Route path='/ProjectBoard' component={ProjectBoard} />
+            <Route path='/addproject' component={AddProject} />
+            <Route path='/contact' component={Contact} />
+          </div>
 
           <footer className='row'>
             <p>Copyright &copy; 2019 ColtXP</p>
