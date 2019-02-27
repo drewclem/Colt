@@ -5,7 +5,7 @@
         "difficulty": "Easy",
         "languages": "CSS, HTML, Javascript",
         "description": "This is a short placeholder paragraph to simulate what actual project content may look like. Be as descriptive as you feel is necessary to properly describe the scope of the project work. You want to give a little background on the app first? Go for it! Want to cut right to the chase of what's needed? Have at it! Just make sure you have enough information for the potential colts to have a good iead of what is needed to complete the project.",
-        "url": "https://github.com/drewclem/Colt"
+        "url": "https://github.com"
     },
     {
         "id": 2,
@@ -13,7 +13,7 @@
         "difficulty": "Easy",
         "languages": "CSS, HTML, Javascript",
         "description": "THIS IS AN EXAMPLE POST. My client has decided they want the background color of the buttons to change across the board. All you have to do is find the css declaration for btn-main and change the color to #f4f4f4. My client has decided they want the background color of the buttons to change across the board. All you have to do is find the css declaration for btn-main and change the color to #f4f4f4. My client has decided they want the background color of the buttons to change across the board. All you have to do is find the css declaration for btn-main and change the color to #f4f4f4.",
-        "url": "https://github.com/drewclem/Colt"
+        "url": "https://github.com"
     },
     {
         "id": 3,
@@ -21,6 +21,6 @@
         "difficulty": "Hard",
         "languages": "Elixir, Postgres",
         "description": "THIS IS AN EXAMPLE POST. Site currently doesn't have way for users to reset passwords for their account. There is already a user accounts module in place so we'll just be adding the logic needed to send them through a secure path of resetting their password.",
-        "url": "https://github.com/drewclem/Colt"
+        "url": "https://github.com"
     }
 ]

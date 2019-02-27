@@ -4,14 +4,20 @@ import '../css/App.css';
 import { NavLink, Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
+import fire from '../config/fire'
 
 class Nav extends Component {
   constructor (props) {
   super(props);
   this.toggleClass = this.toggleClass.bind(this);
+  this.logout= this.logout.bind(this);
   this.state = {
     active: false
   }
+}
+
+logout(){
+  fire.auth().signOut();
 }
 
   toggleClass () {
@@ -43,6 +49,8 @@ class Nav extends Component {
                   onClick= {this.toggleClass}
                 />
               </button>
+
+              <Link to='/login' className='nav-login'>Login</Link>
             </nav>
           </div>
         )

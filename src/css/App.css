@@ -4,6 +4,7 @@
   --dark-blue-trans: rgba(31, 65, 97, 0.856);
   --light-blue: rgb(82,187,229);
   --green: rgb(189, 231, 64);
+  --white-trans: rgba(255, 255, 255, 0.75);
   --white: rgb(255, 255, 255);
   --black: rgb(48, 48, 48);
   --light-black: rgba(48,48,48, 0.80);
@@ -64,6 +65,26 @@ Nav Styles
   line-height: 2.5;
   padding-left: 20px;
   color: var(--black);
+}
+
+.nav-login {
+  position: absolute;
+  top: 65px;
+  right: 55px;
+  color: var(--white-trans);
+  font-size: 12px;
+  transition: ease-in 100ms;
+}
+
+.nav-login:hover{
+  color: var(--white);
+  text-decoration: none;
+}
+
+@media (max-width: 768px){
+  .nav-login{
+    left: 15px;
+  }
 }
 
 .nav-logo:hover {
@@ -315,6 +336,7 @@ Button Styles
   box-shadow: 5px 5px 10px rgba(33, 33, 33, 0.125);
   transition: cubic-bezier(0.25, -0.25, 0.5, 1.5) 250ms;
   border-radius: 10px;
+  margin-right: 10px;
 }
 
 .btn:hover{
