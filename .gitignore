@@ -11,6 +11,9 @@
 # production
 /build
 
+# sens info
+/config
+
 # misc
 .DS_Store
 .env.local
