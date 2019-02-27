@@ -10,9 +10,7 @@
 
 # production
 /build
-
-# sens info
-/config
+fire.js
 
 # misc
 .DS_Store
