@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import '../css/App.css';
 import '../css/projectboard.css';
 import '../css/bootstrap/css/bootstrap.min.css';
-import List from './List'
+import List from '../components/List'
 
 class ProjectBoard extends Component {
 

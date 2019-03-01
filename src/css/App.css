@@ -8,6 +8,7 @@
   --white: rgb(255, 255, 255);
   --black: rgb(48, 48, 48);
   --light-black: rgba(48,48,48, 0.80);
+  --lighter-black: rgba(48, 48, 48, 0.5);
 }
 
 h1, h2, h3, h4, h5, h6, label {
@@ -69,7 +70,7 @@ Nav Styles
 
 .nav-login {
   position: absolute;
-  top: 65px;
+  top: 70px;
   right: 55px;
   color: var(--white-trans);
   font-size: 12px;
@@ -79,6 +80,11 @@ Nav Styles
 .nav-login:hover{
   color: var(--white);
   text-decoration: none;
+}
+
+.login-subtext{
+  color: var(--lighter-black);
+  font-size: 12px;
 }
 
 @media (max-width: 768px){
@@ -370,6 +376,16 @@ Button Styles
 .btn-blue a:hover{
   color: var(--dark-blue);
   text-decoration: none;
+}
+
+.log-out{
+  box-shadow: none;
+  padding: 5px !important;
+  font-size: 12px !important;
+  position: relative;
+  left: -195px;
+  top: 40px;
+  color: var(--light-black)
 }
 
 @media (min-width: 768px){

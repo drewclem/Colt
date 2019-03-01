@@ -17,10 +17,6 @@
     transition: cubic-bezier(0.165, 0.84, 0.44, 1) 250ms;
 }
 
-.ProjectBoard .Post:hover{
-    transform: scale(1.005);
-}
-
 .Post .btn{
     font-size: 12px;
 }

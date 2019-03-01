@@ -5,9 +5,9 @@ import {
 } from 'react-router-dom';
 import './css/App.css';
 import './css/bootstrap/css/bootstrap.min.css';
-import ProjectBoard from './components/ProjectBoard';
-import AddProject from './components/AddProject';
-import Contact from './components/Contact';
+import ProjectBoard from './pages/ProjectBoard';
+import AddProject from './pages/AddProject';
+import Contact from './pages/Contact';
 import Header from './components/Header';
 import Login from './components/Login';
 import Nav from './components/Nav';

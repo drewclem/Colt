@@ -46,7 +46,7 @@ class Contact extends Component {
               ColtXP started as a small project to learn building in React, but the more I built it the more invested I became in its core mission. I am no expert React developer and in fact, this is my first React app, so please keep this in mind when sending any feedback, suggestions, or comments.
             </p>
 
-            <a href="https://github.com/drewclem/Colt" target="_blank">
+            <a href="https://github.com/drewclem/Colt" target="_blank" rel='noopener noreferrer'>
               <FontAwesomeIcon icon={faCodeBranch} className='gh-link'/>
             </a>
           </div>

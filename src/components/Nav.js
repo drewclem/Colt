@@ -16,9 +16,9 @@ class Nav extends Component {
   }
 }
 
-logout(){
-  fire.auth().signOut();
-}
+  logout(){
+    fire.auth().signOut();
+  }
 
   toggleClass () {
     const currentstate = this.state.active
