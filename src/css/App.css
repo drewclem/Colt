@@ -172,6 +172,11 @@ Nav Styles
     .Nav .main-menu li{
       display: block;
     }
+
+    .Nav .main-menu li a{
+      padding: 15px 25px;
+      width: inherit;
+    }
   }
 
   @media (min-width: 768px){
@@ -182,13 +187,14 @@ Nav Styles
 
   .nav-toggle{
     top: 60px !important;
+    z-index: 1;
   }
 
   .Nav .toggle-dropdown{
     font-size: 24px;
     position: absolute;
     transform: translatey(15px);
-    right: 30px;
+    right: 20px;
     border: none;
     background-color: none;
   }

@@ -35,7 +35,7 @@ class Form extends Component {
         <form className='Form col-md-6' name='project-submission' method='POST' data-netlify='true' netlify-honeypot='bot-field' onChange={this.inputCheck}>
           <input type='hidden' name='form-name' value='project-submission'/>
           <div className='row'>
-            <div className='form-group col-md-9'>
+            <div className='form-group col-xs-12 col-md-9'>
               <label>Project Title:</label>
               <input
                 value= {email.text.title}
@@ -51,7 +51,7 @@ class Form extends Component {
               />
             </div>
 
-            <div className='form-group col-md-6'>
+            <div className='form-group col-xs-12 col-md-6'>
               <label>Difficulty Level:</label>
               <select className='form-control' name='difficulty'>
                 <option value='beginner' selected>Beginner</option>
@@ -60,7 +60,7 @@ class Form extends Component {
               </select>
             </div>
 
-            <div className='form-group col-md-6'>
+            <div className='form-group col-xs-12 col-md-6'>
                 <label>Languages Used:</label>
                 <input
                   value= {email.text.languages}
@@ -106,10 +106,10 @@ class Form extends Component {
                 placeholder='Please provide a description of the project.'
                 rows="8"
                 name='description'
-              />
+              ></textarea>
             </div>
 
-            <div className='form-group col-md-10'>
+            <div className='form-group col-xs-12 col-md-10'>
               <label>Email:</label>
               <input
                 value= {email.sender}
