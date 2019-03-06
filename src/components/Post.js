@@ -13,7 +13,9 @@ class Post extends Component {
             <p className='languages col-xs-6'>{this.props.languages}</p>
           </div>
           <p className="description">{this.props.description}</p>
-          <p className='btn btn-blue'><a href={this.props.url} target='_break'>Take Project</a></p>
+          <p className='btn btn-blue'>
+            <a href={this.props.url} target='_break'>Take Project</a>
+          </p>
         </li>
       </div>
     )

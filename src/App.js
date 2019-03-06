@@ -3,43 +3,43 @@ import {
   HashRouter,
   Route,
 } from 'react-router-dom';
+import { withFirebase } from './components/firebase/index'
 import './css/App.css';
 import './css/bootstrap/css/bootstrap.min.css';
 import ProjectBoard from './pages/ProjectBoard';
 import AddProject from './pages/AddProject';
 import Contact from './pages/Contact';
 import Header from './components/Header';
-import Login from './components/Login';
+import Login from './pages/Login';
 import Nav from './components/Nav';
-import fire from './config/fire';
+import SignUp from './pages/SignUp';
 
 class App extends Component {
   constructor(props){
     super(props);
-    this.state ={
-      user: {},
-    }
+
+    this.state={
+      authUser: null,
+    };
   }
 
   componentDidMount(){
-    this.authListener();
+    this.listener = this.props.firebase.auth.onAuthStateChanged(authUser => {
+      authUser
+        ? this.setState({authUser})
+        : this.setState({authUser: null});
+    });
   }
 
-  authListener(){
-    fire.auth().onAuthStateChanged((user) => {
-      if (user) {
-        this.setState({user});
-      } else{
-        this.setState({user: null});
-      }
-    });
+  componentWillUnmount(){
+    this.listener();
   }
 
   render() {
     return (
       <HashRouter>
         <div className='App container-fluid'>
-          <Nav />
+          <Nav authUser={this.state.authUser}/>
 
           <div className='wrapper'>
             <Route exact path='/' component={Header}/>
@@ -47,6 +47,7 @@ class App extends Component {
             <Route path='/addproject' component={AddProject} />
             <Route path='/contact' component={Contact} />
             <Route path='/login' component={Login} />
+            <Route path='/signup' component={SignUp} />
           </div>
 
           <footer className='row'>
@@ -58,4 +59,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withFirebase(App);

@@ -40,10 +40,10 @@ class Contact extends Component {
             <div className='separator-red'></div>
             
             <p>
-              I want to make Colt the absolute <strong>best</strong> that it can be. If you have any feedback or input that you feel will improve the user experience please do not hesitate to send it over! See a bug happening? Send it over! Want to contribute to Colt? While I do want to maintain being the main contributor to Colt, I am absolutely open to allowing others to help build Colt with me!
+              I want to make ColtXP the absolute <strong>best</strong> that it can be. If you have any feedback or input that you feel will improve the user experience please do not hesitate to send it over! See a bug happening? Send it over! Want to contribute to ColtXP? While I do want to maintain being the main contributor to ColtXP, I am absolutely open to allowing others to help build ColtXP with me.
             </p>
             <p>
-              ColtXP started as a small project to learn building in React, but the more I built it the more invested I became in its core mission. I am no expert React developer and in fact, this is my first React app, so please keep this in mind when sending any feedback, suggestions, or comments.
+            ColtXP started as a small project to learn building in React, but the more I built it the more invested I became in its core mission. I am not an expert React developer and in fact, this is my first React app, so please keep this in mind when sending any feedback, suggestions, or comments.
             </p>
 
             <a href="https://github.com/drewclem/Colt" target="_blank" rel='noopener noreferrer'>

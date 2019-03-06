@@ -3,23 +3,17 @@ import '../css/bootstrap/css/bootstrap.min.css';
 import '../css/App.css';
 import { NavLink, Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import SignOutButton from './SignOutButton'
 import { faBars } from '@fortawesome/free-solid-svg-icons';
-import fire from '../config/fire'
 
 class Nav extends Component {
   constructor (props) {
   super(props);
   this.toggleClass = this.toggleClass.bind(this);
-  this.logout= this.logout.bind(this);
   this.state = {
     active: false
   }
 }
-
-  logout(){
-    fire.auth().signOut();
-  }
-
   toggleClass () {
     const currentstate = this.state.active
     this.setState({active: !currentstate})
@@ -42,7 +36,7 @@ class Nav extends Component {
                     <NavLink to='/contact'>Contact Colt</NavLink>
                 </li>
               </ul>
-              <button>
+              <button className="toggle-dropdown">
                 <FontAwesomeIcon 
                   icon= {faBars} 
                   className='hidden-sm hidden-md hidden-lg hidden-xl pull-right'
@@ -50,7 +44,17 @@ class Nav extends Component {
                 />
               </button>
 
-              <Link to='/login' className='nav-login'>Login</Link>
+              <div className="quicklinks">
+                <ul>
+                  <li>
+                    <SignOutButton />
+                  </li>
+                  <li>
+                    <Link to='/login'>Login</Link>
+                  </li>
+                </ul>
+              </div>
+              
             </nav>
           </div>
         )
