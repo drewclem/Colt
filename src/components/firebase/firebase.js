@@ -1,5 +1,6 @@
 import app from 'firebase/app';
 import 'firebase/auth';
+import 'firebase/firestore';
 
 // Initialize Firebase
 var config = {
@@ -15,7 +16,12 @@ class firebase {
   constructor(){
     app.initializeApp(config);
 
+    this.fieldValue = app.firestore.fieldValue;
+    this.emailAuthProvider = app.auth.emailAuthProvider;
+
     this.auth = app.auth();
+    this.db = app.firestore();
+    this.db.settings({timestampsInSnapshots: true});
   }
 
   createUserWithEmailandPassword = (email, password) =>
@@ -30,8 +36,28 @@ class firebase {
 
   passwordUpdate = password =>
     this.auth.currentUser.updatePassword(password);
+
+  onAuthUserListener = (next, fallback) =>
+    this.auth.onAuthStateChanged(authUser => {
+      if(authUser) {
+        this.user(authUser.uid)
+        .get()
+        .then(snapshot => {
+          const dbUser = snapshot.data();
+
+          authUser = {
+            uid: authUser.uid,
+            ...dbUser,
+          };
+        });
+      } else{
+        fallback();
+      }
+    });
+
+    user = uid => this.db.doc(`users/${uid}`);
+    users = () => this.db.collection('users');
+
 }
 
-
-
-export default firebase
+export default firebase;

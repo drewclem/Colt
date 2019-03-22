@@ -13,6 +13,7 @@ const SignUpPage = () => (
 );
 
 const INITIAL_STATE ={
+  name: '',
   username: '',
   email: '',
   passwordOne: '',
@@ -33,11 +34,21 @@ class SignUpFormBase extends Component {
   onSubmit(e){
     e.preventDefault();
 
-    const {username, email, passwordOne } = this.state;
+    const {username, email, passwordOne, name } = this.state;
 
     this.props.firebase
       .createUserWithEmailandPassword(email, passwordOne)
       .then(authUser => {
+        return this.props.firebase.user(authUser.user.uid).set(
+          {
+            username,
+            name,
+            email
+          },
+          {merge: true},
+        )
+      })
+      .then(() => {
         this.setState({...INITIAL_STATE});
         this.props.history.push('/projectboard')
       })
@@ -52,6 +63,7 @@ class SignUpFormBase extends Component {
 
   render() {
     const {
+      name,
       username,
       email,
       passwordOne,
@@ -71,12 +83,24 @@ class SignUpFormBase extends Component {
               <div className='form-group'>
                 <label>Name:</label>
                 <input
+                  value={name}
+                  onChange={this.handleChange}
+                  type='text'
+                  name='name'
+                  className='form-control'
+                  placeholder='Dinesh Chugtai'
+                />
+              </div>
+
+              <div className='form-group'>
+                <label>Username:</label>
+                <input
                   value={username}
                   onChange={this.handleChange}
                   type='text'
                   name='username'
                   className='form-control'
-                  placeholder='Dinesh Chugtai'
+                  placeholder='dineshCTO'
                 />
               </div>
 
@@ -113,7 +137,7 @@ class SignUpFormBase extends Component {
                   onChange={this.handleChange}
                   type='password'
                   name='passwordTwo'
-                  className='form-control'
+                  className='form-control bottom-20'
                   placeholder='g1lf0yl35uck5'
                 />
               </div>

@@ -34,7 +34,7 @@ class Header extends Component {
               <div className="col-sm-6 how-wrapper pull-right">
                 <h2>How it Works</h2>
                 <div className='how-separator'></div>
-                <p><span>1. </span>Jump over the Project Board and find a listing that interests you.</p>
+                <p><span>1. </span>Jump over to the Project Board and find a listing that interests you.</p>
                 <p><span>2. </span>Hit the 'Take Project' button and get in contact with the project owner. If it's still open you can begin working out the details of completing the task, and work through the task.</p>
                 <p><span>3. </span>Work through the task with the senior developer. They'll be there for pairing sessions, answering questions, and guiding you through the project to completion.</p>
               </div>

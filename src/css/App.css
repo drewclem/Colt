@@ -73,7 +73,6 @@ Nav Styles
   position: absolute;
   top: 70px;
   right: 55px;
-  color: var(--white-trans);
   font-size: 12px;
   transition: ease-in 100ms;
 }
@@ -95,12 +94,12 @@ Nav Styles
 
 .quicklinks ul li a,
 .quicklinks ul li button{
-  color: var(--white-trans);
+  color: var(--dark-blue-trans);
 }
 
 .quicklinks ul li a:hover,
 .quicklinks ul li button:hover{
-  color: var(--white);
+  color: var(--dark-blue);
   text-decoration: none;
 }
 
@@ -363,6 +362,20 @@ Contact Styles
   }
 }
 
+.contributions{
+  margin-top: 30px;
+  font-size: 14px;
+}
+
+.contributions p{
+  color: var(--light-black);
+}
+
+.contributions ul{
+  list-style: circle;
+  line-height: 1.75;
+}
+
 /*---------------------------------------------
 -----------------------------------------------
 Button Styles
@@ -439,9 +452,27 @@ footer{
   margin-left: 0;
 }
 
+footer .footer-social {
+  position: absolute;
+  right: 60px;
+}
+
+.footer-social a{
+  padding:20px 10px;
+}
+
 @media (min-width: 768px){
   footer{
     margin-top: 40px;
+  }
+}
+
+@media (max-width: 768px){
+  footer .footer-social{
+    right: 20px;
+  }
+  .footer-social a{
+    padding: 10px 5px;
   }
 }
 
