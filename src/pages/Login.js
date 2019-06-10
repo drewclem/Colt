@@ -1,17 +1,29 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
-
 import { withFirebase } from '../components/firebase/index'
 import { withRouter } from 'react-router-dom'
+import 'firebase/auth';
+import {config} from '../components/firebase/firebase'
+import {
+  FirebaseAuthProvider,
+} from "@react-firebase/auth"
+import firebase from "firebase/app";
 
 const LoginPage = () => (
-  <div className="signInPage container">
-    <h2>Log In</h2>
-        <div className='separator-red'></div>
-        <div className='row'>
-          <LoginForm />
+  
+  <FirebaseAuthProvider firebase={firebase} {...config}>
+    {({ isSignedIn, user, providerId }) => {
+      return (
+        <div className="signInPage container">
+          <h2>Log In</h2>
+              <div className='separator-red'></div>
+              <div className='row'>
+                <LoginForm />
+              </div>
         </div>
-  </div>
+      );
+    }}
+  </FirebaseAuthProvider>
 )
 
 const INITIAL_STATE ={

@@ -3,7 +3,7 @@ import '../css/bootstrap/css/bootstrap.min.css';
 import '../css/App.css';
 import { NavLink, Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import SignOutButton from './SignOutButton'
+// import SignOutButton from './SignOutButton'
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 
 class Nav extends Component {
@@ -47,7 +47,7 @@ class Nav extends Component {
               <div className="quicklinks">
                 <ul>
                   <li>
-                    <SignOutButton />
+                    {/* <SignOutButton /> */}
                   </li>
                   <li>
                     <Link to='/login'>Login</Link>

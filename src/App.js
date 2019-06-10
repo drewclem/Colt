@@ -11,8 +11,10 @@ import AddProject from './pages/AddProject';
 import Contact from './pages/Contact';
 import Header from './components/Header';
 import Login from './pages/Login';
-import Nav from './components/Nav';
 import SignUp from './pages/SignUp';
+import ContactThanks from './pages/ContactThanks'
+import ListingThanks from './pages/ListingThanks'
+import Layout from './components/Layout'
 
 class App extends Component {
   constructor(props){
@@ -23,48 +25,34 @@ class App extends Component {
     };
   }
 
-  componentDidMount(){
-    this.listener = this.props.firebase.auth.onAuthStateChanged(authUser => {
-      authUser
-        ? this.setState({authUser})
-        : this.setState({authUser: null});
-    });
-  }
+  // componentDidMount(){
+  //   this.listener = this.props.firebase.auth.onAuthStateChanged(authUser => {
+  //     authUser
+  //       ? this.setState({authUser})
+  //       : this.setState({authUser: null});
+  //   });
+  // }
 
-  componentWillUnmount(){
-    this.listener();
-  }
+  // componentWillUnmount(){
+  //   this.listener();
+  // }
 
   render() {
     return (
       <HashRouter>
         <div className='App container-fluid'>
-          <Nav authUser={this.state.authUser}/>
-
-          <div className='wrapper'>
-            <Route exact path='/' component={Header}/>
-            <Route path='/ProjectBoard' component={ProjectBoard} />
-            <Route path='/addproject' component={AddProject} />
-            <Route path='/contact' component={Contact} />
-            <Route path='/login' component={Login} />
-            <Route path='/signup' component={SignUp} />
-          </div>
-          
-          <footer className='row'>
-            <div className='footer-social'>
-              <a href="https://twitter.com/coltxp1"
-                target="_blank"
-                rel="noopener noreferrer">
-                <i class="fa fa-twitter"></i>
-              </a>
-              <a href="https://www.facebook.com/coltxp"
-                target="_blank"
-                rel="noopener noreferrer">
-                <i class="fa fa-facebook-f"></i> 
-              </a>
+          <Layout>
+            <div className='wrapper'>
+              <Route exact path='/' component={Header}/>
+              <Route path='/ProjectBoard' component={ProjectBoard} />
+              <Route path='/addproject' component={AddProject} />
+              <Route path='/contact' component={Contact} />
+              <Route path='/login' component={Login} />
+              <Route path='/signup' component={SignUp} />
+              <Route path='/contactthanks' component={ContactThanks} />
+              <Route path='/listingthanks' component={ListingThanks} />
             </div>
-            <p>Copyright &copy; 2019 ColtXP</p>
-          </footer>
+          </Layout>
         </div>
       </HashRouter>
     );

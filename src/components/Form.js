@@ -32,7 +32,7 @@ class Form extends Component {
     return (
       <div>
 
-        <form className='Form col-md-6' name='project-submission' method='POST' data-netlify='true' netlify-honeypot='bot-field' onChange={this.inputCheck}>
+        <form className='Form col-md-6' name='project-submission' action='/ListingThanks' method='POST' data-netlify='true' netlify-honeypot='bot-field' onChange={this.inputCheck}>
           <input type='hidden' name='form-name' value='project-submission'/>
           <div className='row'>
             <div className='form-group col-xs-12 col-md-9'>
