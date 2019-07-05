@@ -1,0 +1,20 @@
+:root {
+  --red: #DF4141;
+  --dark-blue: #213548;
+  --light-blue: rgba(33,53,72,.6);
+  --trans-blue: rgba(33,53,72,.75);
+  --gray: #f0f0f0;
+}
+
+@tailwind base;
+
+button{
+  transition: 250ms cubic-bezier(0.175, 0.885, 0.32, 1.275)
+}
+
+button:hover{
+  transform: scale(1.1);
+}
+
+@tailwind components;
+@tailwind utilities;
