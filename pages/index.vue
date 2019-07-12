@@ -3,7 +3,7 @@
     <div class="container mx-auto text-blue-dark p-4">
 
       <div class="xl:w-11/12 xl:mx-auto md:flex mb-12 md:mb-24 mt-4 md:mt-8">
-        <div class="md:w-3/4 mt-6 mb-10 md:mt-12 ">
+        <div class="md:w-3/4 mt-6 mb-12 lg:mt-12 ">
           <h1 class="text-5xl lg:text-6xl font-bold leading-tight mb-6">Guided Open<br />Source Learning</h1>
           <p class="text-red md:w-3/4">Gain real-world experience working through open source issues with senior developers.</p>
         </div>
@@ -14,10 +14,13 @@
 
       <div class="md:flex">
         <div class="pr-8 md:w-5/12 text-center md:text-right md:mt-12 mb-12 md:mb-12">
-          <h2 class="text-2xl md:text-4xl font-bold mb-6 md:mb-8"><span class="text-red">Create an account</span> and get started on your open source journey.</h2>
+          <h2 class="text-2xl md:text-4xl font-bold mb-6 md:mb-8">
+            <span class="text-red">Create an account</span> 
+            and get started on your open source journey.
+          </h2>
           <button class="bg-red py-1 px-8 shadow-md hover:shadow-lg">
             <nuxt-link
-              to="/"
+              to="/signup"
               class="text-white font-bold"
             >
               Create an Account

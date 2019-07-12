@@ -1,6 +1,6 @@
 <template>
   <div class="bg-gray">
-    <header class="container text-sm md:text-lg mx-auto font-display py-2 px-4">
+    <header class="text-sm md:text-lg mx-auto font-display py-2 px-4">
         <nav
           class="flex justify-between"
         >
@@ -44,13 +44,33 @@
           </div>
         </nav>
     </header>
+    <button
+      v-on:click="signout"
+      class="absolute right-0 pr-6 pt-2 text-blue-lightest text-xs"
+    >
+      Sign Out
+    </button>
   </div>
 </template>
 
 <script>
+  import firebase from 'firebase'
+
   export default {
-    name: 'CxpHeader'
+    name: 'CxpHeader',
+
+    methods: {
+      signout: function(e) {
+        firebase.auth().signOut()
+          .then(
+            alert("You've been signed out.")
+          );
+
+        e.preventDefault();
+      }
+    }
   }
+
 </script>
 
 <style scoped>

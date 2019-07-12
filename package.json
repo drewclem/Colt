@@ -13,6 +13,7 @@
     "cypress:open": "cypress open"
   },
   "dependencies": {
+    "firebase": "^6.2.4",
     "nuxt": "^2.0.0"
   },
   "devDependencies": {
