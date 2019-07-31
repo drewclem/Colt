@@ -6,17 +6,17 @@
 
       <form class="md:w-5/12">
         <div class="mb-4">
-          <label class="block font-bold mb-2" for="name">Name</label>
+          <label class="block text-blue-dark font-bold mb-2" for="name">Name</label>
           <input type="text" class="border p-1 border-blue-lightest rounded w-full" name="name">
         </div>
 
         <div class="mb-4">
-          <label class="block font-bold mb-2" for="email">Email</label>
+          <label class="block text-blue-dark font-bold mb-2" for="email">Email</label>
           <input type="text" class="border p-1 border-blue-lightest rounded w-full" name="email">
         </div>
 
         <div class="mb-4">
-          <label class="block font-bold mb-2" for="comments">Comments</label>
+          <label class="block text-blue-dark font-bold mb-2" for="comments">Comments</label>
           <textarea row="8" class="border p-1 border-blue-lightest rounded w-full" name="comments"></textarea>
         </div>
 

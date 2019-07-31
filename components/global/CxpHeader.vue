@@ -46,7 +46,7 @@
     </header>
     <button
       v-on:click="signout"
-      class="absolute right-0 pr-6 pt-2 text-blue-lightest text-xs"
+      class="absolute right-0 mr-6 mt-2 text-blue-lightest text-xs"
     >
       Sign Out
     </button>

@@ -28,7 +28,7 @@
       </div>
       <button
         class="mt-4 bg-red py-1 px-8 shadow-md hover:shadow-lg text-white font-bold"
-        v-on:click="signin"
+        v-on:click="emailLogin"
       >
         Sign In
       </button>
@@ -48,7 +48,7 @@
 </template>
 
 <script>
-  import { auth } from '~/plugins/firebase'
+import {auth} from '@/plugins/firebase.js'
 
   export default {
     name: 'signin',
@@ -61,14 +61,15 @@
     },
 
     methods: {
-      signin: function(e) {
+      emailLogin: function(e) {
         auth.signInWithEmailAndPassword(this.email, this.password)
           .then(user => {
-            alert("You're signed in!");
+            alert("you're signed in!");
           },
           err => {
             alert(err.message);
           })
+
         e.preventDefault();
       }
     }
