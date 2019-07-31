@@ -10,31 +10,50 @@
       </button>
     </div>
 
-    <div class="p-12 shadow-lg hover:shadow-xl project-card mb-8">
-      <nuxt-link to="/">
-        <h2 class="text-blue-dark text-xl mb-2">Fix mobile header</h2>
-        <ul class="text-red list-none mb-2">
-          <li class="inline-block mr-2">GatsbyJS</li>
-          <li class="inline-block mr-2">Tailwind CSS</li>
-        </ul>
-        <p class="text-blue-light">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Laoreet id donec ultrices tincidunt arcu. Etiam dignissim diam quis enim lobortis scelerisque. Vel fringilla est ullamcorper eget nulla facilisi etiam dignissim diam. Lorem ipsum dolor sit amet consectetur adipiscing elit. Vitae aliquet nec ullamcorper sit amet risus nullam eget. </p>
-      </nuxt-link>
-    </div>
+    <ul>
+      <project-card
+        :posts="posts"
+        class="mx-auto"
+        >
+      </project-card>
+    </ul>
   </div>
 </template>
 
 <script>
+  import {StoreDB} from '@/plugins/firebase.js'
+  import ProjectCard from '~/components/ProjectCard.vue'
+  
   export default {
-    name: 'ProjectBoard'
+    name: 'ProjectBoard',
+
+    components: {
+      ProjectCard
+    },
+
+    data() {
+      return {
+        posts: []
+      }
+    },
+
+    async asyncData({params}) {
+      const querySnapshot = await StoreDB.collection("posts").get()
+      
+      const posts = querySnapshot.docs.map(documentSnapshot => {
+        let post = documentSnapshot.data()
+
+        return {
+          title: post.title,
+          description: post.description,
+          difficulty: post.difficulty,
+          languages: post.languages,
+          url: post.url,
+          active: post.active
+        }
+      })
+
+      return { posts }
+    }
   }
 </script>
-
-<style scoped>
-.project-card{
-  transition: 250ms cubic-bezier(0.175, 0.885, 0.32, 1.275)
-}
-.project-card:hover{
-  transform: scale(1.01)
-}
-
-</style>
