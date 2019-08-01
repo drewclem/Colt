@@ -38,7 +38,7 @@
     },
 
     async asyncData({params}) {
-      const querySnapshot = await StoreDB.collection("posts").get()
+      const querySnapshot = await StoreDB.collection("posts").where("active", "==", true).get()
       
       const posts = querySnapshot.docs.map(documentSnapshot => {
         let post = documentSnapshot.data()

@@ -4,7 +4,9 @@ import { interopDefault } from './utils'
 
 const _1be82cfa = () => interopDefault(import('../pages/addproject.vue' /* webpackChunkName: "pages/addproject" */))
 const _9848dff6 = () => interopDefault(import('../pages/contact.vue' /* webpackChunkName: "pages/contact" */))
+const _583cb27e = () => interopDefault(import('../pages/contact-thanks.vue' /* webpackChunkName: "pages/contact-thanks" */))
 const _47daba18 = () => interopDefault(import('../pages/contribute.vue' /* webpackChunkName: "pages/contribute" */))
+const _b082cbb0 = () => interopDefault(import('../pages/project-thanks.vue' /* webpackChunkName: "pages/project-thanks" */))
 const _9d204350 = () => interopDefault(import('../pages/projectboard.vue' /* webpackChunkName: "pages/projectboard" */))
 const _2535da4d = () => interopDefault(import('../pages/signin.vue' /* webpackChunkName: "pages/signin" */))
 const _39cc30c3 = () => interopDefault(import('../pages/signup.vue' /* webpackChunkName: "pages/signup" */))
@@ -93,9 +95,17 @@ export function createRouter() {
       component: _9848dff6,
       name: "contact"
     }, {
+      path: "/contact-thanks",
+      component: _583cb27e,
+      name: "contact-thanks"
+    }, {
       path: "/contribute",
       component: _47daba18,
       name: "contribute"
+    }, {
+      path: "/project-thanks",
+      component: _b082cbb0,
+      name: "project-thanks"
     }, {
       path: "/projectboard",
       component: _9d204350,

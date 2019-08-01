@@ -131,14 +131,14 @@ export async function setContext(app, context) {
   if (!app.context) {
     app.context = {
       isStatic: process.static,
-      isDev: true,
+      isDev: false,
       isHMR: false,
       app,
 
       payload: context.payload,
       error: context.error,
       base: '/',
-      env: {}
+      env: {"API_KEY":"AIzaSyAkiaRSeJZPSVbKWiDhb3nmrE1PiNXbT4g","AUTH_DOMAIN":"coltxp-3a04a.firebaseapp.com","DATABASE_URL":"https://coltxp-3a04a.firebaseio.com","PROJECT_ID":"coltxp-3a04a","STORAGE_BUCKET":"coltxp-3a04a.appspot.com","MESSAGING_SENDER_ID":"288910205486","APP_ID":"1:288910205486:web:7af61905475bcebc"}
     }
     // Only set once
     if (context.req) {
@@ -233,9 +233,6 @@ export function middlewareSeries(promises, appContext) {
 export function promisify(fn, context) {
   let promise
   if (fn.length === 2) {
-      console.warn('Callback-based asyncData, fetch or middleware calls are deprecated. ' +
-        'Please switch to promises or async/await syntax')
-
     // fn(context, callback)
     promise = new Promise((resolve) => {
       fn(context, function (err, data) {

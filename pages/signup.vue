@@ -7,10 +7,10 @@
           class="block font-bold mb-2"
           for="email">Email</label>
         <input
-          class="border border-blue-lightest rounded w-full p-1"
+          class="block w-full p-1 bg-gray rounded border border-gray focus:outline-none focus:bg-white focus:border-blue-lightest"
           type="text"
           id="email"
-          placeholder="email"
+          placeholder="jared@piedpiper.com"
           v-model="email"
         >
       </div>
@@ -19,10 +19,10 @@
           class="block font-bold mb-2"
           for="username">Username</label>
         <input
-          class="border border-blue-lightest rounded w-full p-1"
+          class="block w-full p-1 bg-gray rounded border border-gray focus:outline-none focus:bg-white focus:border-blue-lightest"
           type="text"
           id="username"
-          placeholder="username"
+          placeholder="hailrichard39"
           v-model="username"
         >
       </div>
@@ -31,10 +31,10 @@
           class="block font-bold mb-2"
           for="password">Password</label>
         <input
-          class="border border-blue-lightest rounded w-full p-1"
+          class="block w-full p-1 bg-gray rounded border border-gray focus:outline-none focus:bg-white focus:border-blue-lightest"
           type="password"
           id="password"
-          placeholder="password"
+          placeholder="pp3876#rh"
           v-model="password"
         >
       </div>
