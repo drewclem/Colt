@@ -1,16 +1,20 @@
 <template>
   <div class="container mx-auto p-4 mt-12">
     <div class="md:w-8/12 md:mx-auto">
-      <h1 class="text-3xl text-red mb-8">Add a Project</h1>
+      <h1 class="text-2xl lg:text-3xl text-red mb-8">Add a Project</h1>
 
       <div class="lg:flex">
         <form
           class="lg:w-6/12 lg:mr-8 mb-8"
-          name="project" method="POST"
-          data-netlify-recaptcha="true"
+          name="project"
+          method="POST"
           data-netlify="true"
           netlify-honeypot="bot-field"
+          v-on:submit="submitProject"
         >
+
+          <input name="form-name" value="project" hidden>
+
           <div class="mb-4">
             <label class="block text-blue-dark font-bold mb-2" for="title">Project Title</label>
             <input
@@ -32,6 +36,7 @@
                 name="difficulty"
                 required
               >
+                <option value="" disabled selected>Select One</option>
                 <option value="easy">Easy</option>
                 <option value="intermediate">Intermediate</option>
                 <option value="hard">Hard</option>
@@ -94,7 +99,6 @@
           <button
             type="submit"
             class="bg-red py-1 px-8 shadow-md hover:shadow-lg text-white font-bold"
-            v-on:click="submitProject"
           >
             Send
           </button>
@@ -148,8 +152,8 @@
           description: this.description,
           email: this.email
         })
-        .then(function(docRef) {
-          console.log(docRef.id)
+        .then(function() {
+          window.location.replace('/project-thanks')
         })
 
         e.preventDefault();

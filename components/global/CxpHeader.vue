@@ -1,6 +1,6 @@
 <template>
   <div class="bg-gray">
-    <header class="text-sm md:text-lg mx-auto font-display py-2 px-4">
+    <header class="container text-sm md:text-lg mx-auto font-display py-2 px-4">
         <nav
           class="flex justify-between"
         >
@@ -44,12 +44,12 @@
           </div>
         </nav>
     </header>
-    <button
+    <!--<button
       v-on:click="signout"
       class="absolute right-0 mr-6 mt-2 text-blue-lightest text-xs"
     >
       Sign Out
-    </button>
+    </button>--->
   </div>
 </template>
 

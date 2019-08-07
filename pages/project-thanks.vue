@@ -1,11 +1,11 @@
 <template>
   <div class="container mx-auto p-4 mt-12">
     <div class="md:w-8/12 md:mx-auto">
-      <h1 class="text-3xl text-red mb-8">Thanks for listing!</h1>
+      <h1 class="text-2xl lg:text-3xl text-red mb-8">Thanks for listing your project!</h1>
 
       <div class="lg:flex">
         <div class="lg:w-6/12">
-          <h2 class="text-xl text-blue-dark">We'll review your project listing and notify you when it becomes active</h2>
+          <h2 class="text-xl text-blue-dark mb-4 md:mr-4">We'll review your project listing and notify you when it becomes active.</h2>
         </div>
         <div class="lg:w-6/12">
           <div class="mb-8">

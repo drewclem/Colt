@@ -2,10 +2,20 @@
   <div class="container mx-auto p-4 mt-12">
     <div class="md:w-8/12 md:mx-auto">
 
-      <h1 class="text-3xl text-red mb-8">Contact Us</h1>
+      <h1 class="text-2xl lg:text-3xl text-red mb-8">Contact Us</h1>
 
     <div class="lg:flex">
-      <form class="lg:w-6/12 lg:mr-8 mb-8" name="contact" method="POST" data-netlify-recaptcha="true" data-netlify="true" netlify-honeypot="bot-field" action="/contact-thanks">
+      <form
+        class="lg:w-6/12 lg:mr-8 mb-8"
+        name="contact"
+        method="POST"
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+        action="/contact-thanks"
+      >
+
+        <input name="form-name" value="contact" hidden>
+        
         <div class="mb-4">
           <label class="block text-blue-dark font-bold mb-2" for="name">Name</label>
           <input type="text" class="block p-1 bg-gray rounded w-full border border-gray focus:outline-none focus:bg-white focus:border-blue-lightest" name="name" placeholder="Dinesh Chungtai" required>

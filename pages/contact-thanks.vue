@@ -2,7 +2,7 @@
   <div class="container mx-auto p-4 mt-12">
     <div class="md:w-8/12 md:mx-auto">
 
-      <h1 class="text-3xl text-red mb-8">Thanks!</h1>
+      <h1 class="text-2xl lg:text-3xl text-red mb-8">Thanks!</h1>
 
     <div class="lg:flex">
       <div class="lg:w-6/12 lg:mr-8 mb-8">

@@ -2,7 +2,7 @@
   <div class="container mx-auto p-4 mt-12">
     <div class="md:flex mb-10 md:mb-20">
       <div class="flex-1 font-bold md:pr-10 mb-10">
-        <h1 class="text-3xl text-red mb-4">Contribute to Colt</h1>
+        <h1 class="text-2xl lg:text-3xl text-red mb-4">Contribute to Colt</h1>
         <p class="text-blue-dark text-xl mt-12">The best resources for learning are the ones that have a strong community behind them. That’s why at ColtXP, we encourage everyone to contribute in whatever way fits their lives best. Here you’ll find some quick guides on some of the ways you can help better the ColtXP community.</p>
       </div>
       <div class="flex-1 w-10/12 mx-auto">

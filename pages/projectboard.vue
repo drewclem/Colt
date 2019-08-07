@@ -1,8 +1,8 @@
 <template>
   <div class="container mx-auto p-4 mt-12">
     <div class="flex justify-between mb-8">
-      <h1 class="text-3xl text-red">Available Projects</h1>
-      <button class="bg-red py-0 px-4 text-xs shadow-md hover:shadow-lg"> 
+      <h1 class="text-2xl lg:text-3xl text-red">Available Projects</h1>
+      <button class="bg-red px-2 text-xs shadow-md hover:shadow-lg"> 
         <nuxt-link
           to="/addproject"
           class="text-white font-bold">Add a Project

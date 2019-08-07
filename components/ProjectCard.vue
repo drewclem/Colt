@@ -3,7 +3,7 @@
     <li
       v-for="post in posts"
       :key="post.title"
-      class="project-card p-12 shadow-md hover:shadow-lg mb-8 cursor-pointer"
+      class="project-card p-6 md:p-12 shadow-md hover:shadow-lg mb-8 cursor-pointer"
     >
       <a :href="post.url">
         <h2 class="text-blue-dark text-xl mb-3">{{post.title}}</h2>
