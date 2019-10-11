@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="text-blue-default antialiased leading-relaxed">
+  <div id="app" class="text-blue-default antialiased leading-relaxed pb-20 relative">
     <cxp-header />
       <main>
         <nuxt />
