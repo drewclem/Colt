@@ -25,3 +25,6 @@ yarn-debug.log*
 yarn-error.log*
 sendgrid.env
 src/components/firebase/firebase.js
+
+# Local Netlify folder
+.netlify
