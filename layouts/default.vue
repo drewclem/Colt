@@ -1,16 +1,19 @@
 <template>
   <div id="app" class="text-blue-default antialiased leading-relaxed">
-    <cxp-header />
+    <div class="wrapper">
+      <cxp-header />
       <main>
         <nuxt />
       </main>
+      <div class="push"></div>
+    </div>
     <cxp-footer />
   </div>
 </template>
 
 <script>
-import CxpHeader from '~/components/global/CxpHeader.vue'
-import CxpFooter from '~/components/global/CxpFooter.vue'
+import CxpHeader from "~/components/global/CxpHeader.vue";
+import CxpFooter from "~/components/global/CxpFooter.vue";
 
 export default {
   components: {
@@ -20,8 +23,19 @@ export default {
 
   data() {
     return {
-      params: {},
-    }
+      params: {}
+    };
   }
-}
+};
 </script>
+
+<style scoped>
+.wrapper {
+  min-height: 100vh;
+  margin-bottom: -98px;
+}
+
+.push {
+  height: 70px;
+}
+</style>
