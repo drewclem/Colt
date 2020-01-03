@@ -138,7 +138,7 @@ export async function setContext(app, context) {
       payload: context.payload,
       error: context.error,
       base: '/',
-      env: {"API_KEY":"AIzaSyAkiaRSeJZPSVbKWiDhb3nmrE1PiNXbT4g","AUTH_DOMAIN":"coltxp-3a04a.firebaseapp.com","DATABASE_URL":"https://coltxp-3a04a.firebaseio.com","PROJECT_ID":"coltxp-3a04a","STORAGE_BUCKET":"coltxp-3a04a.appspot.com","MESSAGING_SENDER_ID":"288910205486","APP_ID":"1:288910205486:web:7af61905475bcebc"}
+      env: {"API_KEY":"AIzaSyAkiaRSeJZPSVbKWiDhb3nmrE1PiNXbT4g","AUTH_DOMAIN":"coltxp-3a04a.firebaseapp.com","DATABASE_URL":"https://coltxp-3a04a.firebaseio.com","PROJECT_ID":"coltxp-3a04a","STORAGE_BUCKET":"coltxp-3a04a.appspot.com","MESSAGING_SENDER_ID":"288910205486","APP_ID":"288910205486:web:7af61905475bcebc"}
     }
     // Only set once
     if (context.req) {

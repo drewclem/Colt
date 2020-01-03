@@ -2,15 +2,15 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import { interopDefault } from './utils'
 
-const _1be82cfa = () => interopDefault(import('../pages/addproject.vue' /* webpackChunkName: "pages/addproject" */))
-const _9848dff6 = () => interopDefault(import('../pages/contact.vue' /* webpackChunkName: "pages/contact" */))
-const _583cb27e = () => interopDefault(import('../pages/contact-thanks.vue' /* webpackChunkName: "pages/contact-thanks" */))
-const _47daba18 = () => interopDefault(import('../pages/contribute.vue' /* webpackChunkName: "pages/contribute" */))
-const _b082cbb0 = () => interopDefault(import('../pages/project-thanks.vue' /* webpackChunkName: "pages/project-thanks" */))
-const _9d204350 = () => interopDefault(import('../pages/projectboard.vue' /* webpackChunkName: "pages/projectboard" */))
-const _2535da4d = () => interopDefault(import('../pages/signin.vue' /* webpackChunkName: "pages/signin" */))
-const _39cc30c3 = () => interopDefault(import('../pages/signup.vue' /* webpackChunkName: "pages/signup" */))
-const _ded44a12 = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
+const _b59c4966 = () => interopDefault(import('../pages/addproject.vue' /* webpackChunkName: "pages/addproject" */))
+const _8d03fb0a = () => interopDefault(import('../pages/contact.vue' /* webpackChunkName: "pages/contact" */))
+const _8874b8ea = () => interopDefault(import('../pages/contact-thanks.vue' /* webpackChunkName: "pages/contact-thanks" */))
+const _09fea83c = () => interopDefault(import('../pages/contribute.vue' /* webpackChunkName: "pages/contribute" */))
+const _e0bad21c = () => interopDefault(import('../pages/project-thanks.vue' /* webpackChunkName: "pages/project-thanks" */))
+const _32e085a2 = () => interopDefault(import('../pages/projectboard.vue' /* webpackChunkName: "pages/projectboard" */))
+const _14e04117 = () => interopDefault(import('../pages/signin.vue' /* webpackChunkName: "pages/signin" */))
+const _2976978d = () => interopDefault(import('../pages/signup.vue' /* webpackChunkName: "pages/signup" */))
+const _4dfe72ed = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
 
 Vue.use(Router)
 
@@ -88,39 +88,39 @@ export function createRouter() {
 
     routes: [{
       path: "/addproject",
-      component: _1be82cfa,
+      component: _b59c4966,
       name: "addproject"
     }, {
       path: "/contact",
-      component: _9848dff6,
+      component: _8d03fb0a,
       name: "contact"
     }, {
       path: "/contact-thanks",
-      component: _583cb27e,
+      component: _8874b8ea,
       name: "contact-thanks"
     }, {
       path: "/contribute",
-      component: _47daba18,
+      component: _09fea83c,
       name: "contribute"
     }, {
       path: "/project-thanks",
-      component: _b082cbb0,
+      component: _e0bad21c,
       name: "project-thanks"
     }, {
       path: "/projectboard",
-      component: _9d204350,
+      component: _32e085a2,
       name: "projectboard"
     }, {
       path: "/signin",
-      component: _2535da4d,
+      component: _14e04117,
       name: "signin"
     }, {
       path: "/signup",
-      component: _39cc30c3,
+      component: _2976978d,
       name: "signup"
     }, {
       path: "/",
-      component: _ded44a12,
+      component: _4dfe72ed,
       name: "index"
     }],
 
