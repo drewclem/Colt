@@ -12,19 +12,17 @@
           netlify-honeypot="bot-field"
           v-on:submit="submitProject"
         >
-
-          <input name="form-name" value="project" hidden>
+          <input name="form-name" value="project" hidden />
 
           <div class="mb-4">
-            <label class="block text-blue-dark font-bold mb-2" for="title">Project Title</label>
+            <label class="block text-blue-dark mb-2 font-bold" for="title">Project Title</label>
             <input
               v-model="title"
               type="text"
-              class="block p-1 bg-gray rounded w-full border border-gray focus:outline-none focus:bg-white focus:border-blue-lightest"
+              class="block p-1 bg-gray w-full border border-gray focus:outline-none focus:bg-white focus:border-blue-lightest"
               name="title"
-              placeholder="Add middle out compression"
               required
-            >
+            />
           </div>
 
           <div class="flex flex-wrap">
@@ -32,11 +30,11 @@
               <label class="block text-blue-dark font-bold mb-2" for="name">Difficulty</label>
               <select
                 v-model="difficulty"
-                class="appearance-none block p-1 bg-gray rounded w-full border border-gray focus:outline-none focus:bg-white focus:border-blue-lightest"
+                class="appearance-none block p-1 bg-gray w-full border border-gray focus:outline-none focus:bg-white focus:border-blue-lightest"
                 name="difficulty"
                 required
               >
-                <option value="" disabled selected>Select One</option>
+                <option value disabled selected>Select One</option>
                 <option value="easy">Easy</option>
                 <option value="intermediate">Intermediate</option>
                 <option value="hard">Hard</option>
@@ -44,40 +42,40 @@
             </div>
 
             <div class="mb-4 w-full md:w-1/2">
-              <label class="block text-blue-dark font-bold mb-2" for="languages">Languages Used</label>
+              <label class="block text-blue-dark font-bold mb-2" for="languages">Tech Languages</label>
               <input
                 v-model="languages"
                 type="text"
-                class="block p-1 bg-gray rounded w-full border border-gray focus:outline-none focus:bg-white focus:border-blue-lightest"
+                class="block p-1 bg-gray w-full border border-gray focus:outline-none focus:bg-white focus:border-blue-lightest"
                 name="languages"
-                placeholder="HTML, CSS, JS"
                 required
-              >
+              />
             </div>
           </div>
 
           <div class="mb-4 w-full">
-            <label class="block text-blue-dark font-bold mb-2" for="url">Github Link</label>
+            <label class="block text-blue-dark -mb-1 font-bold mb-2" for="url">Github Link</label>
+            <p class="text-blue-light mb-2">
+              <small>We use this to link your posting to your project.</small>
+            </p>
             <input
               v-model="url"
               type="text"
-              class="block w-full p-1 bg-gray rounded border border-gray focus:outline-none focus:bg-white focus:border-blue-lightest"
+              class="block w-full p-1 bg-gray border border-gray focus:outline-none focus:bg-white focus:border-blue-lightest"
               name="url"
-              placeholder="https://github.com/helpmebuildthis"
               required
-            >
+            />
           </div>
 
           <div class="mb-4 w-full">
             <label class="block text-blue-dark font-bold mb-2" for="description">Description</label>
             <textarea
               v-model="description"
-              class="block p-1 w-full bg-gray rounded border border-gray focus:outline-none focus:bg-white focus:border-blue-lightest"
+              class="block p-1 w-full bg-gray border border-gray focus:outline-none focus:bg-white focus:border-blue-lightest"
               rows="8"
               name="description"
-              placeholder="Building a world-changing middle out compression company. Need help implementing the neural net."
               required
-            ></textarea>  
+            ></textarea>
           </div>
 
           <div class="mb-8 md:w-8/12">
@@ -85,30 +83,27 @@
             <input
               v-model="email"
               type="email"
-              class="block w-full p-1 bg-gray rounded border border-gray focus:outline-none focus:bg-white focus:border-blue-lightest"
+              class="block w-full p-1 bg-gray border border-gray focus:outline-none focus:bg-white focus:border-blue-lightest"
               name="email"
-              placeholder="richard@piedpiper.com"
               required
-            >
+            />
           </div>
-          
+
           <p class="hidden">
-            <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+            <label>
+              Don’t fill this out if you're human:
+              <input name="bot-field" />
+            </label>
           </p>
 
-          <button
-            type="submit"
-            class="bg-red py-1 px-8 shadow-md hover:shadow-lg text-white font-bold"
-          >
-            Send
-          </button>
+          <button type="submit" class="button-base button-red shadow-md hover:shadow-lg">Send</button>
         </form>
         <div class="lg:w-6/12">
           <div class="mb-8">
             <h2 class="font-bold text-red mb-2">Your role</h2>
-            <p class="text-blue-light">
-              As the senior developer, there are some expectations that you'll be available (within windows specified by you at the beginning of each project), maintain an encouraging and professional attitude, and generally just be a good person to the junior developer you're working with. It's important to have a thorough conversation before any work begins to determine the junior developer's skill level and ability to complete the task. You are in no way required to work with everyone that requests your listing. If you feel there will be some personality or work ethic conflicts during the initial conversation, it is completely ok and expected for you to say 'I appreciate your interest, but I don't feel we'll be a good pair to work together,' or something to that effect.
-            </p>
+            <p
+              class="text-blue-light"
+            >As the senior developer, there are some expectations that you'll be available (within windows specified by you at the beginning of each project), maintain an encouraging and professional attitude, and generally just be a good person to the junior developer you're working with. It's important to have a thorough conversation before any work begins to determine the junior developer's skill level and ability to complete the task. You are in no way required to work with everyone that requests your listing. If you feel there will be some personality or work ethic conflicts during the initial conversation, it is completely ok and expected for you to say 'I appreciate your interest, but I don't feel we'll be a good pair to work together,' or something to that effect.</p>
           </div>
           <h2 class="font-bold text-red mb-2">Topics to Cover upfront</h2>
           <ul class="list-disc text-blue-light ml-6">
@@ -124,26 +119,27 @@
 </template>
 
 <script>
-  import {StoreDB} from '@/plugins/firebase.js'
+import { StoreDB } from "@/plugins/firebase.js";
 
-  export default {
-    name: 'AddProject',
+export default {
+  name: "AddProject",
 
-    data: function() {
-      return {
-        active: '',
-        title: '',
-        difficulty: '',
-        languages: '',
-        url: '',
-        description: '',
-        email: ''
-      }
-    },
+  data: function() {
+    return {
+      active: "",
+      title: "",
+      difficulty: "",
+      languages: "",
+      url: "",
+      description: "",
+      email: ""
+    };
+  },
 
-    methods: {
-      submitProject: function(e) {
-        StoreDB.collection('posts').add({
+  methods: {
+    submitProject: function(e) {
+      StoreDB.collection("posts")
+        .add({
           active: false,
           title: this.title,
           difficulty: this.difficulty,
@@ -153,15 +149,14 @@
           email: this.email
         })
         .then(function() {
-          window.location.replace('/project-thanks')
-        })
+          window.location.replace("/project-thanks");
+        });
 
-        e.preventDefault();
-      }
+      e.preventDefault();
     }
   }
+};
 </script>
 
 <style scoped>
-
 </style>

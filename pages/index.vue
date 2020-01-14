@@ -22,8 +22,8 @@
             <span class="text-red">Create an account</span>
             and get started on your open source journey.
           </h2>
-          <button class="bg-red py-1 px-8 shadow-md hover:shadow-lg">
-            <nuxt-link to="/signup" class="text-white font-bold">Create an Account</nuxt-link>
+          <button class="button-base button-red shadow-md hover:shadow-lg">
+            <nuxt-link to="/signup">Create an Account</nuxt-link>
           </button>
           <p>
             <small

@@ -23,3 +23,11 @@ button:hover{
 
 @tailwind components;
 @tailwind utilities;
+
+.button-base {
+  @apply py-1 px-8 shadow-md
+}
+
+.button-red {
+  @apply bg-red text-white
+}
