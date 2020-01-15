@@ -59,8 +59,12 @@ export default {
   methods: {
     register: function(e) {
       auth.createUserWithEmailAndPassword(this.email, this.password).then(
-        user => {
-          alert(`Account created for ${user.email}`);
+        data => {
+          data.user
+            .updateProfile({
+              displayName: this.form.name
+            })
+            .then(() => {});
         },
         err => {
           alert(err.message);

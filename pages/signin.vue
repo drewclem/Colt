@@ -22,7 +22,7 @@
       </div>
       <button
         class="mt-4 bg-red py-1 px-8 shadow-md hover:shadow-lg text-white font-bold"
-        v-on:click="emailLogin"
+        :click="emailLogin"
       >Sign In</button>
     </form>
 
@@ -51,8 +51,9 @@ export default {
   methods: {
     emailLogin: function(e) {
       auth.signInWithEmailAndPassword(this.email, this.password).then(
-        user => {
+        data => {
           alert("you're signed in!");
+          this.$router.replace({ name: "Dashboard" });
         },
         err => {
           alert(err.message);
@@ -64,6 +65,3 @@ export default {
   }
 };
 </script>
-
-<style scoped>
-</style>
