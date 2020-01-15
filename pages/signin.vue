@@ -52,7 +52,6 @@ export default {
     emailLogin: function(e) {
       auth.signInWithEmailAndPassword(this.email, this.password).then(
         data => {
-          alert("you're signed in!");
           this.$router.replace({ name: "Dashboard" });
         },
         err => {

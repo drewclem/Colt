@@ -17,7 +17,7 @@ const config = {
 
 export const GoogleProvider = new firebase.auth.GoogleAuthProvider()
 export const auth = firebase.auth().onAuthStateChanged(user => {
-  createStore.dispatch("fetchUser", user);
+  createStore().dispatch("fetchUser", user);
 })
 export const StoreDB = firebase.firestore()
 export default firebase

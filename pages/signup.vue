@@ -62,7 +62,7 @@ export default {
         data => {
           data.user
             .updateProfile({
-              displayName: this.form.name
+              displayName: this.form.username
             })
             .then(() => {});
         },
