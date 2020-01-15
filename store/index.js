@@ -2,10 +2,10 @@ import Vuex from 'vuex'
 
 const createStore = () => {
   return new Vuex.Store({
-    state() {
-      return {
+    state: {
+      user: {
         loggedIn: false,
-        data: ''
+        data: null
       }
     },
 
@@ -27,14 +27,14 @@ const createStore = () => {
 
     actions: {
       fetchUser({ commit }, user) {
-        commit("SET_LOGGED_IN", user !== '');
+        commit("SET_LOGGED_IN", user !== null);
         if (user) {
           commit("SET_USER", {
             displayName: user.displayName,
             email: user.email
           });
         } else {
-          commit("SET_USER", '');
+          commit("SET_USER", null);
         }
       }
     }

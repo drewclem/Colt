@@ -60,11 +60,9 @@ export default {
     register: function(e) {
       auth.createUserWithEmailAndPassword(this.email, this.password).then(
         data => {
-          data.user
-            .updateProfile({
-              displayName: this.form.username
-            })
-            .then(() => {});
+          data.user.updateProfile({
+            displayName: this.username
+          });
         },
         err => {
           alert(err.message);
