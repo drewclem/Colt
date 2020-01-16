@@ -20,7 +20,7 @@ const createStore = () => {
     },
 
     actions: {
-      signInWithEmail({ commit }) {
+      signInWithEmail({ commit }, { email, password }) {
         return new Promise((resolve, reject) => {
           auth.signInWithEmailAndPassword(email, password)
           resolve()

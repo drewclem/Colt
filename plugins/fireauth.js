@@ -5,6 +5,10 @@ export default (context) => {
 
   return new Promise((resolve, reject) => {
     auth.onAuthStateChanged(user => {
+
+      // Build desired user record
+      // let cxpUser = userBuilder.build(user)
+
       store.commit('setUser', user)
       resolve()
     })

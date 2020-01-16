@@ -63,7 +63,6 @@ export default {
     },
     parallel: true,
     cache: true,
-    hardSource: true,
     /*
     ** You can extend webpack config here
     */

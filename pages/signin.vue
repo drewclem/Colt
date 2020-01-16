@@ -1,7 +1,7 @@
 <template>
   <div class="md:w-5/12 lg:w-3/12 mt-12 mx-auto mt-12 p-8 shadow-xl">
     <h1 class="text-red text-3xl mb-4">Sign In</h1>
-    <form class="mb-4" :submit="emailLogin">
+    <form class="mb-4" @submit.prevent="emailLogin">
       <div class="mb-4">
         <label class="block text-blue-dark font-bold mb-2" for="email">Email</label>
         <input
