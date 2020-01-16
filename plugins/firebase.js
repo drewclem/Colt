@@ -1,7 +1,6 @@
 import * as firebase from 'firebase/app'
 import 'firebase/auth'
 import 'firebase/firestore'
-import createStore from "../store/index"
 
 const config = {
   apiKey: process.env.API_KEY,
@@ -16,8 +15,6 @@ const config = {
 !firebase.apps.length ? firebase.initializeApp(config) : ''
 
 export const GoogleProvider = new firebase.auth.GoogleAuthProvider()
-export const auth = firebase.auth().onAuthStateChanged(user => {
-  createStore().dispatch("fetchUser", user);
-})
+export const auth = firebase.auth()
 export const StoreDB = firebase.firestore()
 export default firebase

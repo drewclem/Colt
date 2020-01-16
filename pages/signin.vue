@@ -1,7 +1,7 @@
 <template>
   <div class="md:w-5/12 lg:w-3/12 mt-12 mx-auto mt-12 p-8 shadow-xl">
     <h1 class="text-red text-3xl mb-4">Sign In</h1>
-    <form class="mb-4">
+    <form class="mb-4" :submit="emailLogin">
       <div class="mb-4">
         <label class="block text-blue-dark font-bold mb-2" for="email">Email</label>
         <input
@@ -20,10 +20,7 @@
           v-model="password"
         />
       </div>
-      <button
-        class="mt-4 bg-red py-1 px-8 shadow-md hover:shadow-lg text-white font-bold"
-        :click="emailLogin"
-      >Sign In</button>
+      <button class="mt-4 bg-red py-1 px-8 shadow-md hover:shadow-lg text-white font-bold">Sign In</button>
     </form>
 
     <div class="text-xs text-blue-light">
@@ -36,8 +33,6 @@
 </template>
 
 <script>
-import { auth } from "@/plugins/firebase.js";
-
 export default {
   name: "signin",
 
@@ -50,16 +45,19 @@ export default {
 
   methods: {
     emailLogin: function(e) {
-      auth.signInWithEmailAndPassword(this.email, this.password).then(
-        data => {
-          this.$router.replace({ name: "Dashboard" });
-        },
-        err => {
-          alert(err.message);
-        }
-      );
-
-      e.preventDefault();
+      this.$store
+        .dispatch("signInWithEmail", {
+          email: this.email,
+          password: this.password
+        })
+        .then(() => {
+          this.email = "";
+          this.password = "";
+          this.$router.push("/dashboard");
+        })
+        .catch(e => {
+          console.log(e.message);
+        });
     }
   }
 };

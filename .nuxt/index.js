@@ -13,6 +13,7 @@ import { createStore } from './store.js'
 /* Plugins */
 
 import nuxt_plugin_firebase_34d6f55a from 'nuxt_plugin_firebase_34d6f55a' // Source: ../plugins/firebase.js (mode: 'all')
+import nuxt_plugin_fireauth_22211b23 from 'nuxt_plugin_fireauth_22211b23' // Source: ../plugins/fireauth.js (mode: 'all')
 
 // Component: <ClientOnly>
 Vue.component(ClientOnly.name, ClientOnly)
@@ -171,6 +172,10 @@ async function createApp (ssrContext) {
 
   if (typeof nuxt_plugin_firebase_34d6f55a === 'function') {
     await nuxt_plugin_firebase_34d6f55a(app.context, inject)
+  }
+
+  if (typeof nuxt_plugin_fireauth_22211b23 === 'function') {
+    await nuxt_plugin_fireauth_22211b23(app.context, inject)
   }
 
   // If server-side, wait for async component to be resolved first

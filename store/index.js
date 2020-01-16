@@ -1,41 +1,30 @@
 import Vuex from 'vuex'
+import firebase, { auth, GoogleProvider } from '~/plugins/firebase.js'
 
 const createStore = () => {
   return new Vuex.Store({
     state: {
-      user: {
-        loggedIn: false,
-        data: null
-      }
+      user: ''
     },
 
     getters: {
-      user(state) {
+      activeUser: (state, getters) => {
         return state.user
       }
     },
 
     mutations: {
-      SET_LOGGED_IN(state, value) {
-        state.user.loggedIn = value;
-      },
-
-      SET_USER(state, data) {
-        state.user.data = data;
+      setUser(state, payload) {
+        state.user = payload
       }
     },
 
     actions: {
-      fetchUser({ commit }, user) {
-        commit("SET_LOGGED_IN", user !== null);
-        if (user) {
-          commit("SET_USER", {
-            displayName: user.displayName,
-            email: user.email
-          });
-        } else {
-          commit("SET_USER", null);
-        }
+      signInWithEmail({ commit }) {
+        return new Promise((resolve, reject) => {
+          auth.signInWithEmailAndPassword(email, password)
+          resolve()
+        })
       }
     }
   })
