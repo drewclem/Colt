@@ -20,7 +20,7 @@
           v-model="password"
         />
       </div>
-      <button class="mt-4 bg-red py-1 px-8 shadow-md hover:shadow-lg text-white font-bold">Sign In</button>
+      <button class="mt-4 button-base button-red w-full shadow-md hover:shadow-lg">Sign In</button>
     </form>
 
     <div class="text-xs text-blue-light">

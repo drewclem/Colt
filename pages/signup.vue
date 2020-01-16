@@ -30,7 +30,7 @@
         />
       </div>
       <button
-        class="mt-4 bg-red py-1 px-8 shadow-md hover:shadow-lg text-white font-bold"
+        class="mt-4 button-base button-red shadow-md hover:shadow-lg w-full"
         v-on:click="register"
       >Sign Up</button>
     </form>
