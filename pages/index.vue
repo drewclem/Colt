@@ -1,7 +1,7 @@
 <template>
   <div class="hero-wrapper pt-12">
     <div class="container mx-auto text-blue-dark p-4">
-      <div class="xl:w-11/12 xl:mx-auto md:flex mb-12 md:mb-24 mt-4 md:mt-8">
+      <div class="relative xl:w-11/12 xl:mx-auto md:flex mb-12 md:mb-24 mt-4 md:mt-8">
         <div class="md:w-3/4 mt-6 mb-12 lg:mt-12">
           <h1 class="text-5xl lg:text-6xl font-bold leading-tight mb-6">
             Guided Open
@@ -56,4 +56,16 @@ export default {};
 </script>
 
 <style scoped>
+.hero-wrapper {
+  background-image: url(../assets/images/headerbg.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 768px) {
+  .hero-wrapper {
+    background-size: cover;
+    background-position-y: -600px;
+  }
+}
 </style>
