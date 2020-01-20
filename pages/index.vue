@@ -1,5 +1,5 @@
 <template>
-  <div class="hero-wrapper">
+  <div class="hero-wrapper pt-12">
     <div class="container mx-auto text-blue-dark p-4">
       <div class="xl:w-11/12 xl:mx-auto md:flex mb-12 md:mb-24 mt-4 md:mt-8">
         <div class="md:w-3/4 mt-6 mb-12 lg:mt-12">
@@ -58,8 +58,11 @@ export default {};
 <style scoped>
 .hero-wrapper {
   background-image: url(../assets/images/headerbg.svg);
-  background-size: contain;
+  width: 100%;
   background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+  z-index: -9999;
 }
 
 @media (max-width: 768px) {

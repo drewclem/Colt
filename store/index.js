@@ -8,7 +8,7 @@ const createStore = () => {
     },
 
     getters: {
-      activeUser: (state, getters) => {
+      user(state) {
         return state.user
       }
     },
@@ -25,6 +25,12 @@ const createStore = () => {
           auth.signInWithEmailAndPassword(email, password)
           resolve()
         })
+      },
+      signOut() {
+        auth.signOut().then(() => {
+          commit('setUser', null)
+        })
+          .catch(err => console.log(error))
       }
     }
   })
