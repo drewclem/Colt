@@ -56,19 +56,4 @@ export default {};
 </script>
 
 <style scoped>
-.hero-wrapper {
-  background-image: url(../assets/images/headerbg.svg);
-  width: 100%;
-  background-repeat: no-repeat;
-  position: absolute;
-  top: 0;
-  z-index: -9999;
-}
-
-@media (max-width: 768px) {
-  .hero-wrapper {
-    background-size: cover;
-    background-position-y: -600px;
-  }
-}
 </style>

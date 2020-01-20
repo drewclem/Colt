@@ -63,7 +63,6 @@ export default {
     },
     parallel: true,
     cache: true,
-    hardSource: true,
     /*
     ** You can extend webpack config here
     */
@@ -77,7 +76,6 @@ export default {
       config.module.rules.push({
         test: /\.svg$/,
         loader: 'svg-inline-loader?removeSVGTagAttrs=false&classPrefix=true&idPrefix=true',
-        exclude: /static/,
       })
     }
   }
