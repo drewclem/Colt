@@ -12,6 +12,8 @@ import { mapGetters } from "vuex";
 export default {
   name: "Dashboard",
 
+  middleware: "authenticated",
+
   computed: {
     ...mapGetters({
       user: "user"

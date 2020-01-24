@@ -10,6 +10,10 @@ const createStore = () => {
     getters: {
       user(state) {
         return state.user
+      },
+
+      isAuthenticated(state) {
+        return !!state.user
       }
     },
 
@@ -21,11 +25,9 @@ const createStore = () => {
 
     actions: {
       signInWithEmail({ commit }, { email, password }) {
-        return new Promise((resolve, reject) => {
-          auth.signInWithEmailAndPassword(email, password)
-          resolve()
-        })
+        return auth.signInWithEmailAndPassword(email, password)
       },
+
       signOut() {
         auth.signOut().then(() => {
           commit('setUser', null)
