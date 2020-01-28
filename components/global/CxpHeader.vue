@@ -30,10 +30,14 @@
     </div>
     <ul class="text-xs container mx-auto flex justify-end mt-2 px-4">
       <template v-if="$store.state.user">
-        <li class="inline cursor-none text-blue-dark flex justify-between mr-6">
-          <span v-html="userIcon" class="user-icon-wrapper fill-current text-red mr-2" />
-          <span>{{$store.state.user.email}}</span>
-        </li>
+        <nuxt-link to="/me">
+          <li
+            class="inline cursor-none text-blue-light hover:text-blue-dark flex justify-between mr-6"
+          >
+            <span v-html="userIcon" class="user-icon-wrapper fill-current text-red mr-2" />
+            <span>{{$store.state.user.email}}</span>
+          </li>
+        </nuxt-link>
         <li class="inline text-blue-light hover:text-blue-dark cursor-pointer">
           <a @click="signout">Sign Out</a>
         </li>

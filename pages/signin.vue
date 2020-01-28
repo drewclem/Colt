@@ -53,7 +53,7 @@ export default {
         .then(() => {
           this.email = "";
           this.password = "";
-          this.$router.push("/dashboard");
+          this.$router.push("/me");
         })
         .catch(e => {
           console.log(e.message);

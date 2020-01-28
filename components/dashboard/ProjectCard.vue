@@ -1,7 +1,7 @@
 <template>
   <div>
     <li
-      v-for="post in posts"
+      v-for="post in userPosts"
       :key="post.title"
       class="project-card p-6 md:p-12 shadow-md hover:shadow-lg mb-8 cursor-pointer"
     >
@@ -20,7 +20,7 @@
 export default {
   name: "ProjectCard",
 
-  props: ["posts"]
+  props: ["userPosts"]
 };
 </script>
 
@@ -29,6 +29,6 @@ export default {
   transition: 250ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 .project-card:hover {
-  transform: scale(1.005);
+  ›transform: scale(1.005);
 }
 </style>
