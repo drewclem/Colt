@@ -14,11 +14,6 @@
             >Project Board</nuxt-link>
 
             <nuxt-link
-              to="/addproject"
-              class="text-blue-light hover:text-blue-dark p-2 md:mr-3"
-            >Add a Project</nuxt-link>
-
-            <nuxt-link
               to="/contribute"
               class="text-blue-light hover:text-blue-dark p-2 md:mr-3"
             >Contribute</nuxt-link>
