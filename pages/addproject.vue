@@ -120,6 +120,7 @@
 
 <script>
 import { StoreDB } from "@/plugins/firebase.js";
+import { mapState } from "vuex";
 
 export default {
   name: "AddProject",
@@ -134,8 +135,13 @@ export default {
       languages: "",
       url: "",
       description: "",
-      email: ""
+      email: "",
+      user_id: ""
     };
+  },
+
+  computed: {
+    ...mapState(["user"])
   },
 
   methods: {
@@ -148,7 +154,8 @@ export default {
           languages: this.languages,
           url: this.url,
           description: this.description,
-          email: this.email
+          email: this.email,
+          user_id: this.user.uid
         })
         .then(function() {
           window.location.replace("/project-thanks");
