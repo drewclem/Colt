@@ -6,8 +6,11 @@
       class="project-card p-6 md:p-12 shadow-md hover:shadow-lg mb-8 cursor-pointer"
     >
       <a :href="post.url">
-        <h2 class="text-blue-dark text-xl mb-3">{{post.title}}</h2>
-        <ul class="text-red list-none mb-3">
+        <div class="flex justify-between mb-2">
+          <h2 class="text-blue-dark text-xl">{{post.title}}</h2>
+          <p class="text-red text-sm">{{post.difficulty}}</p>
+        </div>
+        <ul class="text-blue-lightest list-none mb-2">
           <li class="inline-block mr-2">{{post.languages}}</li>
         </ul>
         <p class="text-blue-light">{{post.description}}</p>

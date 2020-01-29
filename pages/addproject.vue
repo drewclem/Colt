@@ -35,9 +35,9 @@
                 required
               >
                 <option value disabled selected>Select One</option>
-                <option value="easy">Easy</option>
-                <option value="intermediate">Intermediate</option>
-                <option value="hard">Hard</option>
+                <option value="Easy">Easy</option>
+                <option value="Intermediate">Intermediate</option>
+                <option value="Hard">Hard</option>
               </select>
             </div>
 
