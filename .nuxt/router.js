@@ -7,6 +7,7 @@ const _b59c4966 = () => interopDefault(import('../pages/addproject.vue' /* webpa
 const _8d03fb0a = () => interopDefault(import('../pages/contact.vue' /* webpackChunkName: "pages/contact" */))
 const _8874b8ea = () => interopDefault(import('../pages/contact-thanks.vue' /* webpackChunkName: "pages/contact-thanks" */))
 const _09fea83c = () => interopDefault(import('../pages/contribute.vue' /* webpackChunkName: "pages/contribute" */))
+const _4a21d960 = () => interopDefault(import('../pages/me/index.vue' /* webpackChunkName: "pages/me/index" */))
 const _e0bad21c = () => interopDefault(import('../pages/project-thanks.vue' /* webpackChunkName: "pages/project-thanks" */))
 const _32e085a2 = () => interopDefault(import('../pages/projectboard.vue' /* webpackChunkName: "pages/projectboard" */))
 const _14e04117 = () => interopDefault(import('../pages/signin.vue' /* webpackChunkName: "pages/signin" */))
@@ -45,6 +46,10 @@ export const routerOptions = {
     path: "/contribute",
     component: _09fea83c,
     name: "contribute"
+  }, {
+    path: "/me",
+    component: _4a21d960,
+    name: "me"
   }, {
     path: "/project-thanks",
     component: _e0bad21c,

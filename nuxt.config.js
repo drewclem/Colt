@@ -63,11 +63,20 @@ export default {
     },
     parallel: true,
     cache: true,
-    hardSource: true,
     /*
     ** You can extend webpack config here
     */
-    extend(config, ctx) {
+    extend(config) {
+      const urlLoader = config.module.rules.find(rule => {
+        return rule.test.toString() === '/\\.(png|jpe?g|gif|svg|webp)$/i'
+      })
+
+      urlLoader.test = /\.(png|jpe?g|gif|webp)$/
+
+      config.module.rules.push({
+        test: /\.svg$/,
+        loader: 'svg-inline-loader?removeSVGTagAttrs=false&classPrefix=true&idPrefix=true',
+      })
     }
   }
 }

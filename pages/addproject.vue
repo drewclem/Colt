@@ -124,6 +124,8 @@ import { StoreDB } from "@/plugins/firebase.js";
 export default {
   name: "AddProject",
 
+  middleware: "authenticated",
+
   data: function() {
     return {
       active: "",
