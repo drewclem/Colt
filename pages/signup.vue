@@ -1,5 +1,5 @@
 <template>
-  <div class="md:w-5/12 lg:w-3/12 mx-auto mt-12 p-8 shadow-xl">
+  <div class="md:w-5/12 lg:w-3/12 -mt-10 mx-auto p-8 sm:shadow-xl">
     <h1 class="text-red text-3xl mb-4">Sign Up</h1>
     <form class="mb-4">
       <div class="mb-4">
@@ -58,16 +58,21 @@ export default {
 
   methods: {
     register: function(e) {
-      auth.createUserWithEmailAndPassword(this.email, this.password).then(
-        data => {
-          data.user.updateProfile({
-            displayName: this.username
-          });
-        },
-        err => {
-          alert(err.message);
-        }
-      );
+      auth
+        .createUserWithEmailAndPassword(this.email, this.password)
+        .then(
+          data => {
+            data.user.updateProfile({
+              displayName: this.username
+            });
+          },
+          err => {
+            alert(err.message);
+          }
+        )
+        .then(() => {
+          this.$router.push("/me");
+        });
 
       e.preventDefault();
     }
