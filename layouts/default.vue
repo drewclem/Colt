@@ -1,8 +1,8 @@
 <template>
   <div id="app" class="text-blue-default antialiased leading-relaxed">
     <div class="wrapper">
-      <cxp-header />
-      <main>
+      <cxp-header class="absolute w-full" />
+      <main class="pt-20 md:pt-24 lg:pt-32">
         <nuxt />
       </main>
       <div class="push"></div>

@@ -1,5 +1,5 @@
 <template>
-  <div class="container mx-auto p-4 mt-12">
+  <div class="container mx-auto p-4">
     <div class="flex justify-between mb-8">
       <h1 class="text-2xl lg:text-3xl text-red">Available Projects</h1>
       <button class="button-base button-red text-xs shadow-md hover:shadow-lg">

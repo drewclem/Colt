@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="bg-gray">
-      <header class="container text-sm md:text-lg mx-auto font-display py-2 px-4">
+      <header class="container mx-auto text-sm md:text-lg font-display py-2 px-4">
         <nav class="flex justify-between">
           <div>
             <nuxt-link to="/" class="text-blue-dark font-bold">ColtXP</nuxt-link>

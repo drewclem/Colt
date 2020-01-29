@@ -1,5 +1,5 @@
 <template>
-  <div class="container mx-auto p-4 mt-12">
+  <div class="container mx-auto p-4">
     <div class="md:flex mb-10 md:mb-20">
       <div class="flex-1 font-bold md:pr-10 mb-10">
         <h1 class="text-2xl lg:text-3xl text-red mb-4">Contribute to Colt</h1>

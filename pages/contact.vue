@@ -1,5 +1,5 @@
 <template>
-  <div class="container mx-auto p-4 mt-12">
+  <div class="container mx-auto p-4">
     <div class="md:w-8/12 md:mx-auto">
       <h1 class="text-2xl lg:text-3xl text-red mb-8">Contact Us</h1>
 

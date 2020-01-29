@@ -1,5 +1,5 @@
 <template>
-  <div class="container mx-auto p-4 mt-12">
+  <div class="container mx-auto p-4">
     <div class="md:w-8/12 md:mx-auto">
       <div class="flex justify-between mb-8">
         <h1 class="text-2xl lg:text-3xl text-red">Dashboard</h1>
@@ -7,7 +7,7 @@
           <nuxt-link to="/addproject" class="text-white font-bold">Add a Project</nuxt-link>
         </button>
       </div>
-      <div class="w-3/4">
+      <div class="md:w-3/4">
         <div v-if="!userPosts.length > 0">
           <p
             class="text-blue-light mb-4"

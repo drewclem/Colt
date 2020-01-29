@@ -1,5 +1,5 @@
 <template>
-  <div class="hero-wrapper pt-12">
+  <div class="hero-wrapper pt-12 -mt-24">
     <div class="container mx-auto text-blue-dark p-4">
       <div class="relative xl:w-11/12 xl:mx-auto md:flex mb-12 md:mb-24 mt-4 md:mt-8">
         <div class="md:w-3/4 mt-6 mb-12 lg:mt-12">
@@ -25,11 +25,6 @@
           <button class="button-base button-red shadow-md hover:shadow-lg">
             <nuxt-link to="/signup">Create an Account</nuxt-link>
           </button>
-          <p>
-            <small
-              class="text-xs"
-            >*We're still working on infrastructure around user accounts so there isn't any benefit or functionality to accounts just yet.</small>
-          </p>
         </div>
 
         <div class="flex-1 font-body mb-12">
