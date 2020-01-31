@@ -14,6 +14,7 @@ import { createStore } from './store.js'
 
 import nuxt_plugin_firebase_34d6f55a from 'nuxt_plugin_firebase_34d6f55a' // Source: ../plugins/firebase.js (mode: 'all')
 import nuxt_plugin_fireauth_22211b23 from 'nuxt_plugin_fireauth_22211b23' // Source: ../plugins/fireauth.js (mode: 'all')
+import nuxt_plugin_veevalidate_1a0c1998 from 'nuxt_plugin_veevalidate_1a0c1998' // Source: ../plugins/vee-validate.js (mode: 'all')
 
 // Component: <ClientOnly>
 Vue.component(ClientOnly.name, ClientOnly)
@@ -21,7 +22,7 @@ Vue.component(ClientOnly.name, ClientOnly)
 // TODO: Remove in Nuxt 3: <NoSsr>
 Vue.component(NoSsr.name, {
   ...NoSsr,
-  render (h, ctx) {
+  render(h, ctx) {
     if (process.client && !NoSsr._warned) {
       NoSsr._warned = true
 
@@ -40,11 +41,11 @@ Vue.component('NChild', NuxtChild)
 // Component: <Nuxt>
 Vue.component(Nuxt.name, Nuxt)
 
-Vue.use(Meta, {"keyName":"head","attribute":"data-n-head","ssrAttribute":"data-n-head-ssr","tagIDKeyName":"hid"})
+Vue.use(Meta, { "keyName": "head", "attribute": "data-n-head", "ssrAttribute": "data-n-head-ssr", "tagIDKeyName": "hid" })
 
-const defaultTransition = {"name":"page","mode":"out-in","appear":false,"appearClass":"appear","appearActiveClass":"appear-active","appearToClass":"appear-to"}
+const defaultTransition = { "name": "page", "mode": "out-in", "appear": false, "appearClass": "appear", "appearActiveClass": "appear-active", "appearToClass": "appear-to" }
 
-async function createApp (ssrContext) {
+async function createApp(ssrContext) {
   const router = await createRouter(ssrContext)
 
   const store = createStore(ssrContext)
@@ -65,7 +66,7 @@ async function createApp (ssrContext) {
     nuxt: {
       defaultTransition,
       transitions: [defaultTransition],
-      setTransitions (transitions) {
+      setTransitions(transitions) {
         if (!Array.isArray(transitions)) {
           transitions = [transitions]
         }
@@ -85,7 +86,7 @@ async function createApp (ssrContext) {
 
       err: null,
       dateErr: null,
-      error (err) {
+      error(err) {
         err = err || null
         app.context._errored = Boolean(err)
         err = err ? normalizeError(err) : null
@@ -153,7 +154,7 @@ async function createApp (ssrContext) {
     Vue.use(() => {
       if (!Object.prototype.hasOwnProperty.call(Vue, key)) {
         Object.defineProperty(Vue.prototype, key, {
-          get () {
+          get() {
             return this.$root.$options[key]
           }
         })
@@ -176,6 +177,10 @@ async function createApp (ssrContext) {
 
   if (typeof nuxt_plugin_fireauth_22211b23 === 'function') {
     await nuxt_plugin_fireauth_22211b23(app.context, inject)
+  }
+
+  if (typeof nuxt_plugin_veevalidate_1a0c1998 === 'function') {
+    await nuxt_plugin_veevalidate_1a0c1998(app.context, inject)
   }
 
   // If server-side, wait for async component to be resolved first

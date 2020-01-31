@@ -4,21 +4,27 @@
     <form class="mb-4">
       <div class="mb-4">
         <label class="block font-bold mb-2" for="email">Email</label>
-        <input
-          class="block w-full p-1 bg-gray border border-gray focus:outline-none focus:bg-white focus:border-blue-lightest"
-          type="text"
-          id="email"
-          v-model="email"
-        />
+        <validation-provider name="email" rules="email" v-slot="{errors}" mode="lazy">
+          <input
+            class="block w-full p-1 bg-gray border border-gray focus:outline-none focus:bg-white focus:border-blue-lightest"
+            type="text"
+            id="email"
+            v-model="email"
+          />
+          <span class="text-xs text-red">{{ errors[0] }}</span>
+        </validation-provider>
       </div>
       <div class="mb-4">
         <label class="block font-bold mb-2" for="username">Username</label>
-        <input
-          class="block w-full p-1 bg-gray border border-gray focus:outline-none focus:bg-white focus:border-blue-lightest"
-          type="text"
-          id="username"
-          v-model="username"
-        />
+        <validation-provider name="username" rules="required" v-slot="{errors}" mode="lazy">
+          <input
+            class="block w-full p-1 bg-gray border border-gray focus:outline-none focus:bg-white focus:border-blue-lightest"
+            type="text"
+            id="username"
+            v-model="username"
+          />
+          <span class="text-xs text-red">{{ errors[0] }}</span>
+        </validation-provider>
       </div>
       <div class="mb-4">
         <label class="block font-bold mb-2" for="password">Password</label>
@@ -28,6 +34,9 @@
           id="password"
           v-model="password"
         />
+      </div>
+      <div v-if="error" class="mb-2">
+        <p v-text="error" class="text-red text-xs" />
       </div>
       <button
         class="mt-4 button-base button-red shadow-md hover:shadow-lg w-full"
@@ -44,15 +53,21 @@
 
 <script>
 import { auth } from "~/plugins/firebase";
+import { ValidationProvider } from "vee-validate";
 
 export default {
   name: "signup",
+
+  components: {
+    ValidationProvider
+  },
 
   data: function() {
     return {
       email: "",
       username: "",
-      password: ""
+      password: "",
+      error: null
     };
   },
 
@@ -60,18 +75,20 @@ export default {
     register: function(e) {
       auth
         .createUserWithEmailAndPassword(this.email, this.password)
-        .then(
-          data => {
-            data.user.updateProfile({
-              displayName: this.username
-            });
-          },
-          err => {
-            alert(err.message);
-          }
-        )
+        .then(data => {
+          data.user.updateProfile({
+            displayName: this.username
+          });
+        })
         .then(() => {
           this.$router.push("/me");
+        })
+        .catch(e => {
+          let error = e.message;
+
+          if (error) {
+            this.error = error;
+          }
         });
 
       e.preventDefault();
