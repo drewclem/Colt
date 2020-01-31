@@ -19,6 +19,7 @@
     "netlify-cli": "^2.25.0",
     "nuxt": "^2.11.0",
     "svg-inline-loader": "^0.8.0",
+    "vee-validate": "^3.2.3",
     "vuex": "^3.1.1"
   },
   "devDependencies": {

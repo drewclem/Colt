@@ -30,7 +30,7 @@
               <label class="block text-blue-dark font-bold mb-2" for="name">Difficulty</label>
               <select
                 v-model="difficulty"
-                class="appearance-none block p-1 bg-gray w-full border border-gray focus:outline-none focus:bg-white focus:border-blue-lightest"
+                class="appearance-none block rounded-none p-1 bg-gray w-full border border-gray focus:outline-none focus:bg-white focus:border-blue-lightest"
                 name="difficulty"
                 required
               >
@@ -55,8 +55,8 @@
 
           <div class="mb-4 w-full">
             <label class="block text-blue-dark -mb-1 font-bold mb-2" for="url">Github Link</label>
-            <p class="text-blue-light mb-2">
-              <small>We use this to link your posting to your project.</small>
+            <p class="text-blue-lightest mb-2">
+              <small>Your github projects full ur, e.g. https://github.com/coltxp</small>
             </p>
             <input
               v-model="url"
@@ -80,13 +80,16 @@
 
           <div class="mb-8 md:w-8/12">
             <label class="block text-blue-dark font-bold mb-2" for="email">Email</label>
-            <input
-              v-model="email"
-              type="email"
-              class="block w-full p-1 bg-gray border border-gray focus:outline-none focus:bg-white focus:border-blue-lightest"
-              name="email"
-              required
-            />
+            <validation-provider name="email" rules="email" v-slot="{errors}" mode="lazy">
+              <input
+                v-model="email"
+                type="email"
+                class="block w-full p-1 bg-gray border border-gray focus:outline-none focus:bg-white focus:border-blue-lightest"
+                name="email"
+                required
+              />
+              <span class="text-xs text-red">{{ errors[0] }}</span>
+            </validation-provider>
           </div>
 
           <p class="hidden">
@@ -121,11 +124,16 @@
 <script>
 import { StoreDB } from "@/plugins/firebase.js";
 import { mapState } from "vuex";
+import { ValidationProvider } from "vee-validate";
 
 export default {
   name: "AddProject",
 
   middleware: "authenticated",
+
+  components: {
+    ValidationProvider
+  },
 
   data: function() {
     return {

@@ -26,12 +26,15 @@
 
           <div class="mb-4">
             <label class="block text-blue-dark font-bold mb-2" for="email">Email</label>
-            <input
-              type="text"
-              class="block p-1 bg-gray w-full border border-gray focus:outline-none focus:bg-white focus:border-blue-lightest"
-              name="email"
-              required
-            />
+            <validation-provider name="email" rules="email" v-slot="{errors}" mode="lazy">
+              <input
+                type="text"
+                class="block p-1 bg-gray w-full border border-gray focus:outline-none focus:bg-white focus:border-blue-lightest"
+                id="email"
+                v-model="email"
+              />
+              <span class="text-xs text-red">{{ errors[0] }}</span>
+            </validation-provider>
           </div>
 
           <div class="mb-8">
@@ -68,10 +71,21 @@
 </template>
 
 <script>
+import { ValidationProvider } from "vee-validate";
+
 export default {
-  name: "Contact"
+  name: "Contact",
+
+  components: {
+    ValidationProvider
+  },
+
+  data: function() {
+    return {
+      name: "",
+      email: "",
+      comments: ""
+    };
+  }
 };
 </script>
-
-<style scoped>
-</style>

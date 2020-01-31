@@ -34,7 +34,8 @@ export default {
   */
   plugins: [
     '~/plugins/firebase.js',
-    '~/plugins/fireauth.js'
+    '~/plugins/fireauth.js',
+    '~/plugins/vee-validate.js'
   ],
   /*
   ** Nuxt.js modules
@@ -65,10 +66,13 @@ export default {
     },
     parallel: true,
     cache: true,
+    transpile: [
+      "vee-validate/dist/rules"
+    ],
     /*
     ** You can extend webpack config here
     */
-    extend(config) {
+    extend(config, ctx) {
       const urlLoader = config.module.rules.find(rule => {
         return rule.test.toString() === '/\\.(png|jpe?g|gif|svg|webp)$/i'
       })
