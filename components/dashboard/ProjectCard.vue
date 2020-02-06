@@ -14,6 +14,15 @@
         <li class="inline-block mr-2">{{post.languages}}</li>
       </ul>
     </div>
+    <div class="flex justify-between ml-auto my-auto">
+      <span
+        v-html="editIcon"
+        class="fill-current text-darkgray hover:text-red cursor-pointer mr-4"
+      />
+      <button @click="deletePostForever">
+        <span v-html="deleteIcon" class="fill-current text-darkgray hover:text-red cursor-pointer" />
+      </button>
+    </div>
   </div>
 </template>
 
@@ -46,6 +55,14 @@ export default {
   computed: {
     set: function() {
       this.active = this.post.active;
+    },
+
+    editIcon() {
+      return require("~/assets/images/icons/edit-24px.svg");
+    },
+
+    deleteIcon() {
+      return require("~/assets/images/icons/delete_forever-24px.svg");
     }
   },
 
@@ -64,6 +81,22 @@ export default {
         })
         .catch(err => {
           console.err("Error updating document", error);
+        });
+    },
+
+    deletePostForever: function() {
+      const post = this.post;
+
+      let docDeleteRef = StoreDB.collection("posts").doc(post.doc_id);
+
+      return docDeleteRef
+        .delete()
+        .then(() => {
+          alert("Your post has been successfully deleted.");
+          window.location.reload(true);
+        })
+        .catch(err => {
+          console.log("Oops! Looks like something went wrong", err);
         });
     }
   }
