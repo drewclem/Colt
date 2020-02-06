@@ -20,7 +20,9 @@
         </div>
         <div class="v-else">
           <ul>
-            <project-card :user-posts="userPosts" class="mx-auto" />
+            <li v-for="post in userPosts" :key="post.doc_id">
+              <project-card class="mx-auto" :post="post" />
+            </li>
           </ul>
         </div>
       </div>
@@ -63,14 +65,14 @@ export default {
   },
 
   async asyncData({ params }) {
-    const querySnapshot = await StoreDB.collection("posts")
-      .where("active", "==", true)
-      .get();
+    const querySnapshot = await StoreDB.collection("posts").get();
 
     const posts = querySnapshot.docs.map(documentSnapshot => {
+      let doc = documentSnapshot;
       let post = documentSnapshot.data();
 
       return {
+        doc_id: doc.id,
         title: post.title,
         languages: post.languages,
         active: post.active,

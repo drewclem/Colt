@@ -1,29 +1,129 @@
 <template>
-  <div>
-    <li v-for="post in userPosts" :key="post.title" class="project-card p-4 shadow-md mb-8">
-      <a :href="post.url">
-        <h2 class="text-blue-dark text-lg md:text-xl md:mb-2">{{post.title}}</h2>
-        <ul class="text-red list-none text-sm md:mb-2">
-          <li class="inline-block mr-2">{{post.languages}}</li>
-        </ul>
-      </a>
-    </li>
+  <div class="flex project-card p-2 shadow-md mb-8">
+    <div class="mr-4 mt-6">
+      <div>
+        <label class="active-switch round" :for="post.doc_id">
+          <input type="checkbox" :id="post.doc_id" v-model="post.active" />
+          <span class="publish-dot round"></span>
+        </label>
+      </div>
+    </div>
+    <div>
+      <h2 class="text-blue-dark text-lg lg:text-xl">{{post.title}}</h2>
+      <ul class="text-red list-none text-sm md:mb-2">
+        <li class="inline-block mr-2">{{post.languages}}</li>
+      </ul>
+    </div>
   </div>
 </template>
 
 <script>
+import { StoreDB } from "@/plugins/firebase.js";
+
 export default {
   name: "ProjectCard",
 
-  props: ["userPosts"]
+  data() {
+    return {
+      active: ""
+    };
+  },
+
+  props: {
+    post: {
+      type: Object,
+      required: true
+    }
+  },
+
+  watch: {
+    active: function(newVal, initialVal) {
+      this.active = newVal;
+      this.updateActiveStatus();
+    }
+  },
+
+  computed: {
+    set: function() {
+      this.active = this.post.active;
+    }
+  },
+
+  methods: {
+    updateActiveStatus: function() {
+      const post = this.post;
+      // console.log("this part is working");
+      let docRef = StoreDB.collection("posts").doc(post.doc_id);
+
+      return docRef
+        .update({
+          active: post.active
+        })
+        .then(() => {
+          console.log("success");
+        })
+        .catch(err => {
+          console.err("Error updating document", error);
+        });
+    }
+  }
 };
 </script>
 
 <style scoped>
-.project-card {
-  transition: 250ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+.active-switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 14px;
 }
-.project-card:hover {
-  ›transform: scale(1.005);
+
+.active-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.publish-dot {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #f0f0f0;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.publish-dot:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: -6px;
+  background-color: #c4c4c4;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+:before {
+  background-color: #df4141;
+}
+
+.publish-dot.round {
+  border-radius: 34px;
+}
+
+.publish-dot.round:before {
+  border-radius: 50%;
+}
+
+input:checked + .publish-dot:before {
+  -webkit-transform: translateX(16px);
+  -ms-transform: translateX(16px);
+  transform: translateX(16px);
+  background-color: #df4141;
 }
 </style>

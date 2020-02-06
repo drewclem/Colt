@@ -8,7 +8,7 @@
       <a :href="post.url">
         <div class="flex justify-between mb-2">
           <h2 class="text-blue-dark text-xl">{{post.title}}</h2>
-          <p class="text-red text-sm">{{post.difficulty}}</p>
+          <p class="text-red text-sm my-auto">{{post.difficulty}}</p>
         </div>
         <ul class="text-blue-lightest list-none mb-2">
           <li class="inline-block mr-2">{{post.languages}}</li>

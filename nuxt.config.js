@@ -35,7 +35,7 @@ export default {
   plugins: [
     '~/plugins/firebase.js',
     '~/plugins/fireauth.js',
-    '~/plugins/vee-validate.js'
+    '~/plugins/vee-validate.js',
   ],
   /*
   ** Nuxt.js modules
