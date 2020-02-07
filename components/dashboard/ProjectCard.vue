@@ -8,17 +8,18 @@
         </label>
       </div>
     </div>
+
     <div>
       <h2 class="text-blue-dark text-lg lg:text-xl">{{post.title}}</h2>
       <ul class="text-red list-none text-sm md:mb-2">
         <li class="inline-block mr-2">{{post.languages}}</li>
       </ul>
     </div>
-    <div class="flex justify-between ml-auto my-auto">
-      <span
-        v-html="editIcon"
-        class="fill-current text-darkgray hover:text-red cursor-pointer mr-4"
-      />
+
+    <div class="flex justify-between ml-auto">
+      <nuxt-link :to="`/me/${post.doc_id}/edit`" class="mr-4 cursor-pointer my-auto" :post="post">
+        <span v-html="editIcon" class="fill-current text-darkgray hover:text-red" />
+      </nuxt-link>
       <button @click="deletePostForever">
         <span v-html="deleteIcon" class="fill-current text-darkgray hover:text-red cursor-pointer" />
       </button>
@@ -34,7 +35,8 @@ export default {
 
   data() {
     return {
-      active: ""
+      active: "",
+      post: null
     };
   },
 

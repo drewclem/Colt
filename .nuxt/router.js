@@ -12,6 +12,7 @@ const _e0bad21c = () => interopDefault(import('../pages/project-thanks.vue' /* w
 const _32e085a2 = () => interopDefault(import('../pages/projectboard.vue' /* webpackChunkName: "pages/projectboard" */))
 const _14e04117 = () => interopDefault(import('../pages/signin.vue' /* webpackChunkName: "pages/signin" */))
 const _2976978d = () => interopDefault(import('../pages/signup.vue' /* webpackChunkName: "pages/signup" */))
+const _6fdbfb88 = () => interopDefault(import('../pages/me/_post_id/edit.vue' /* webpackChunkName: "pages/me/_post_id/edit" */))
 const _4dfe72ed = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
 
 // TODO: remove in Nuxt 3
@@ -66,6 +67,10 @@ export const routerOptions = {
     path: "/signup",
     component: _2976978d,
     name: "signup"
+  }, {
+    path: "/me/:post_id/edit",
+    component: _6fdbfb88,
+    name: "me-post_id-edit"
   }, {
     path: "/",
     component: _4dfe72ed,
