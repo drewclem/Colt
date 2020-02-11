@@ -23,6 +23,7 @@
             <small>All listings are reviewed before being published</small>
           </p>
         </div>
+
         <div class="flex-1">
           <h3 class="font-bold text-blue-dark text-xl mb-4">Complete Github Issues</h3>
           <p class="text-blue-light">
@@ -35,6 +36,7 @@
           </p>
         </div>
       </div>
+
       <div class="md:flex">
         <div class="pr-10 mb-8 flex-1">
           <h3 class="font-bold text-blue-dark text-xl mb-4">Contribute through Patreon</h3>
@@ -47,6 +49,7 @@
             >Patreon</a> to help ColtXP reach as many people as possible!
           </p>
         </div>
+
         <div class="flex-1">
           <h3 class="font-bold text-blue-dark text-xl mb-4">Spread the word</h3>
           <p

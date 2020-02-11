@@ -9,6 +9,7 @@
             class="text-xl text-blue-dark"
           >Your input is appreciated! Every bit of input helps us a build a better experience!</h2>
         </div>
+
         <div class="lg:w-6/12">
           <h2 class="text-red mb-2">Feedback, Suggestions, Comments</h2>
           <p
