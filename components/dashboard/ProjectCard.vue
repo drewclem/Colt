@@ -56,7 +56,7 @@ export default {
 
   computed: {
     set: function() {
-      this.active = this.post.active;
+      return (this.active = this.post.active);
     },
 
     editIcon() {
