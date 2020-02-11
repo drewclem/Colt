@@ -22,7 +22,7 @@ Vue.component(ClientOnly.name, ClientOnly)
 // TODO: Remove in Nuxt 3: <NoSsr>
 Vue.component(NoSsr.name, {
   ...NoSsr,
-  render(h, ctx) {
+  render (h, ctx) {
     if (process.client && !NoSsr._warned) {
       NoSsr._warned = true
 
@@ -41,11 +41,11 @@ Vue.component('NChild', NuxtChild)
 // Component: <Nuxt>
 Vue.component(Nuxt.name, Nuxt)
 
-Vue.use(Meta, { "keyName": "head", "attribute": "data-n-head", "ssrAttribute": "data-n-head-ssr", "tagIDKeyName": "hid" })
+Vue.use(Meta, {"keyName":"head","attribute":"data-n-head","ssrAttribute":"data-n-head-ssr","tagIDKeyName":"hid"})
 
-const defaultTransition = { "name": "page", "mode": "out-in", "appear": false, "appearClass": "appear", "appearActiveClass": "appear-active", "appearToClass": "appear-to" }
+const defaultTransition = {"name":"page","mode":"out-in","appear":false,"appearClass":"appear","appearActiveClass":"appear-active","appearToClass":"appear-to"}
 
-async function createApp(ssrContext) {
+async function createApp (ssrContext) {
   const router = await createRouter(ssrContext)
 
   const store = createStore(ssrContext)
@@ -66,7 +66,7 @@ async function createApp(ssrContext) {
     nuxt: {
       defaultTransition,
       transitions: [defaultTransition],
-      setTransitions(transitions) {
+      setTransitions (transitions) {
         if (!Array.isArray(transitions)) {
           transitions = [transitions]
         }
@@ -86,7 +86,7 @@ async function createApp(ssrContext) {
 
       err: null,
       dateErr: null,
-      error(err) {
+      error (err) {
         err = err || null
         app.context._errored = Boolean(err)
         err = err ? normalizeError(err) : null
@@ -154,7 +154,7 @@ async function createApp(ssrContext) {
     Vue.use(() => {
       if (!Object.prototype.hasOwnProperty.call(Vue, key)) {
         Object.defineProperty(Vue.prototype, key, {
-          get() {
+          get () {
             return this.$root.$options[key]
           }
         })

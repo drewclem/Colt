@@ -4,6 +4,7 @@
   --light-blue: rgba(33,53,72,.6);
   --trans-blue: rgba(33,53,72,.75);
   --gray: #f0f0f0;
+  --dark-gray: #c4c4c4;
 }
 
 @tailwind base;

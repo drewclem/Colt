@@ -1,6 +1,7 @@
 <template>
   <div class="md:w-5/12 lg:w-3/12 -mt-10 mx-auto p-8 sm:shadow-xl">
     <h1 class="text-red text-3xl mb-4">Sign Up</h1>
+
     <form class="mb-4">
       <div class="mb-4">
         <label class="block font-bold mb-2" for="email">Email</label>
@@ -14,6 +15,7 @@
           <span class="text-xs text-red">{{ errors[0] }}</span>
         </validation-provider>
       </div>
+
       <div class="mb-4">
         <label class="block font-bold mb-2" for="username">Username</label>
         <validation-provider name="username" rules="required" v-slot="{errors}" mode="lazy">
@@ -26,6 +28,7 @@
           <span class="text-xs text-red">{{ errors[0] }}</span>
         </validation-provider>
       </div>
+
       <div class="mb-4">
         <label class="block font-bold mb-2" for="password">Password</label>
         <input

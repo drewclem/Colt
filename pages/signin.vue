@@ -14,6 +14,7 @@
           <span class="text-xs text-red">{{ errors[0] }}</span>
         </validation-provider>
       </div>
+
       <div class="mb-4">
         <label class="block text-blue-dark font-bold mb-2" for="password">Password</label>
         <input
@@ -23,9 +24,11 @@
           v-model="password"
         />
       </div>
+
       <div v-if="error" class="mb-2">
         <p v-text="error" class="text-red text-xs" />
       </div>
+
       <button class="mt-4 button-base button-red w-full shadow-md hover:shadow-lg">Sign In</button>
     </form>
 
