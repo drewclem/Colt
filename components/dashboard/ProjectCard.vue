@@ -35,8 +35,7 @@ export default {
 
   data() {
     return {
-      active: "",
-      post: null
+      active: ""
     };
   },
 
@@ -71,8 +70,9 @@ export default {
   methods: {
     updateActiveStatus: function() {
       const post = this.post;
-      // console.log("this part is working");
       let docRef = StoreDB.collection("posts").doc(post.doc_id);
+
+      let active = post.active;
 
       return docRef
         .update({
@@ -101,6 +101,10 @@ export default {
           console.log("Oops! Looks like something went wrong", err);
         });
     }
+  },
+
+  updated() {
+    this.updateActiveStatus();
   }
 };
 </script>
@@ -127,8 +131,8 @@ export default {
   right: 0;
   bottom: 0;
   background-color: #f0f0f0;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 .publish-dot:before {
@@ -139,8 +143,8 @@ export default {
   left: 4px;
   bottom: -6px;
   background-color: #c4c4c4;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 :before {

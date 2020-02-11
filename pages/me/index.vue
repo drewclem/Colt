@@ -7,6 +7,7 @@
           <nuxt-link to="/addproject" class="text-white font-bold">Add a Project</nuxt-link>
         </button>
       </div>
+
       <div class="md:w-3/4">
         <div v-if="!userPosts.length > 0">
           <p
@@ -18,6 +19,7 @@
             <nuxt-link to="/projectboard" class="text-red underline">here</nuxt-link>
           </p>
         </div>
+
         <div class="v-else">
           <ul>
             <li v-for="post in userPosts" :key="post.doc_id">

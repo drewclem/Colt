@@ -9,6 +9,7 @@
             class="text-xl text-blue-dark mb-4 md:mr-4"
           >We'll review your project listing and notify you when it becomes active.</h2>
         </div>
+
         <div class="lg:w-6/12">
           <div class="mb-8">
             <h2 class="font-bold text-red mb-2">Your role</h2>
@@ -16,6 +17,7 @@
               class="text-blue-light"
             >As the senior developer, there are some expectations that you'll be available (within windows specified by you at the beginning of each project), maintain an encouraging and professional attitude, and generally just be a good person to the junior developer you're working with. It's important to have a thorough conversation before any work begins to determine the junior developer's skill level and ability to complete the task. You are in no way required to work with everyone that requests your listing. If you feel there will be some personality or work ethic conflicts during the initial conversation, it is completely ok and expected for you to say 'I appreciate your interest, but I don't feel we'll be a good pair to work together,' or something to that effect.</p>
           </div>
+
           <h2 class="font-bold text-red mb-2">Topics to Cover upfront</h2>
           <ul class="list-disc text-blue-light ml-6">
             <li>Milestones and goals of the project</li>
