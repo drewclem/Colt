@@ -9,16 +9,16 @@
 
           <div>
             <nuxt-link
-              to="/projectboard/"
+              to="/projectboard"
               class="text-blue-light hover:text-blue-dark p-2 md:mr-3"
             >Project Board</nuxt-link>
 
             <nuxt-link
-              to="/contribute/"
+              to="/contribute"
               class="text-blue-light hover:text-blue-dark p-2 md:mr-3"
             >Contribute</nuxt-link>
 
-            <nuxt-link to="/contact/" class="text-blue-light hover:text-blue-dark py-2 pl-2">Contact</nuxt-link>
+            <nuxt-link to="/contact" class="text-blue-light hover:text-blue-dark py-2 pl-2">Contact</nuxt-link>
           </div>
         </nav>
       </header>
