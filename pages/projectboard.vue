@@ -8,7 +8,13 @@
     </div>
 
     <ul>
-      <project-card :posts="posts" class="mx-auto"></project-card>
+      <li
+        v-for="post in posts"
+        :key="post.doc_id"
+        class="project-card p-6 md:p-12 shadow-md hover:shadow-lg mb-8 cursor-pointer"
+      >
+        <project-card :post="post" />
+      </li>
     </ul>
   </div>
 </template>
@@ -36,9 +42,11 @@ export default {
       .get();
 
     const posts = querySnapshot.docs.map(documentSnapshot => {
+      let doc = documentSnapshot;
       let post = documentSnapshot.data();
 
       return {
+        doc_id: doc.id,
         title: post.title,
         description: post.description,
         difficulty: post.difficulty,
