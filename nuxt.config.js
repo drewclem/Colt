@@ -2,6 +2,10 @@ require('dotenv').config()
 
 export default {
   mode: 'universal',
+
+  router: {
+    prefetchLinks: true
+  },
   /*
   ** Headers of the page
   */
