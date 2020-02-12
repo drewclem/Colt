@@ -34,9 +34,7 @@ export default {
   name: "ProjectCard",
 
   data() {
-    return {
-      active: ""
-    };
+    return {};
   },
 
   props: {
@@ -47,17 +45,15 @@ export default {
   },
 
   watch: {
-    active: function(newVal, initialVal) {
+    "post.active": function(newVal, initialVal) {
+      debugger;
+
       this.active = newVal;
       this.updateActiveStatus();
     }
   },
 
   computed: {
-    set: function() {
-      return (this.active = this.post.active);
-    },
-
     editIcon() {
       return require("~/assets/images/icons/edit-24px.svg");
     },
@@ -68,7 +64,7 @@ export default {
   },
 
   methods: {
-    updateActiveStatus: function() {
+    updateActiveStatus() {
       const post = this.post;
       let docRef = StoreDB.collection("posts").doc(post.doc_id);
 
@@ -86,7 +82,7 @@ export default {
         });
     },
 
-    deletePostForever: function() {
+    deletePostForever() {
       const post = this.post;
 
       let docDeleteRef = StoreDB.collection("posts").doc(post.doc_id);
@@ -101,10 +97,6 @@ export default {
           console.log("Oops! Looks like something went wrong", err);
         });
     }
-  },
-
-  updated() {
-    this.updateActiveStatus();
   }
 };
 </script>
