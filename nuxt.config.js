@@ -14,9 +14,31 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'ColtXP is a platform for junior and senior developers to pair-program on open-source issues for a mutual benefit and growth. Add some experience to your resume while working on actual code projects!' },
-      { hid: 'og:description', name: 'og:description', content: 'ColtXP is a platform for junior and senior developers to pair-program on open-source issues for a mutual benefit and growth. Add some experience to your resume while working on actual code projects!' },
-      { hid: 'og:image', property: 'og:image', content: 'https://coltxp.com/images/og-image.png' }
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'ColtXP is a platform for junior and senior developers to pair-program on open-source issues for a mutual benefit and growth. Add some experience to your resume while working on actual code projects!'
+      },
+      {
+        hid: 'og:description',
+        name: 'og:description',
+        content: 'ColtXP is a platform for junior and senior developers to pair-program on open-source issues for a mutual benefit and growth. Add some experience to your resume while working on actual code projects!'
+      },
+      {
+        hid: 'og:image',
+        property: 'og:image',
+        content: 'https://coltxp.com/images/og-image.png'
+      },
+      {
+        hid: 'twitter:card',
+        name: 'twitter:card',
+        content: 'summary',
+      },
+      {
+        hid: 'twitter:site',
+        name: 'twitter:site',
+        content: '@coltxp1',
+      },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon-02.png' },
