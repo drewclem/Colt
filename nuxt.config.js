@@ -35,6 +35,16 @@ export default {
         content: 'summary',
       },
       {
+        hid: 'twitter:title',
+        name: 'twitter:title',
+        content: 'ColtXP - Guided Open Source Learning',
+      },
+      {
+        hid: 'twitter:description',
+        name: 'twitter:description',
+        content: 'ColtXP is a platform for junior and senior developers to pair-program on open-source issues for a mutual benefit and growth. Add some experience to your resume while working on actual code projects!',
+      },
+      {
         hid: 'twitter:site',
         name: 'twitter:site',
         content: '@coltxp1',
