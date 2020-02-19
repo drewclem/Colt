@@ -7,7 +7,6 @@ import {
 } from './utils'
 
 import NuxtLoading from './components/nuxt-loading.vue'
-import NuxtBuildIndicator from './components/nuxt-build-indicator'
 
 import '../assets/css/tailwind.css'
 
@@ -16,7 +15,7 @@ import _6f6c098b from '../layouts/default.vue'
 const layouts = { "_default": _6f6c098b }
 
 export default {
-  head: {"title":"coltxp","meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":"ColtXP is a platform for junior and senior developers to pair-program on open-source issues for a mutual benefit and growth. Add some experience to your resume while working on actual code projects!"},{"hid":"og:description","name":"og:description","content":"ColtXP is a platform for junior and senior developers to pair-program on open-source issues for a mutual benefit and growth. Add some experience to your resume while working on actual code projects!"},{"hid":"og:image","property":"og:image","content":"https:\u002F\u002Fcoltxp.com\u002Fimages\u002Fog-image.png"}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon-02.png"},{"rel":"stylesheet","href":"https:\u002F\u002Ffonts.googleapis.com\u002Fcss?family=Montserrat|Poppins:400,700&display=swap"}],"style":[],"script":[]},
+  head: {"title":"coltxp","meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":"ColtXP is a platform for junior and senior developers to pair-program on open-source issues for a mutual benefit and growth. Add some experience to your resume while working on actual code projects!"},{"hid":"og:description","name":"og:description","content":"ColtXP is a platform for junior and senior developers to pair-program on open-source issues for a mutual benefit and growth. Add some experience to your resume while working on actual code projects!"},{"hid":"og:image","property":"og:image","content":"https:\u002F\u002Fcoltxp.com\u002Fimages\u002Fog-image.png"},{"hid":"twitter:card","name":"twitter:card","content":"summary"},{"hid":"twitter:title","name":"twitter:title","content":"ColtXP - Guided Open Source Learning"},{"hid":"twitter:description","name":"twitter:description","content":"ColtXP is a platform for junior and senior developers to pair-program on open-source issues for a mutual benefit and growth. Add some experience to your resume while working on actual code projects!"},{"hid":"twitter:site","name":"twitter:site","content":"@coltxp1"}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon-02.png"},{"rel":"stylesheet","href":"https:\u002F\u002Ffonts.googleapis.com\u002Fcss?family=Montserrat|Poppins:400,700&display=swap"}],"style":[],"script":[]},
 
   render (h, props) {
     const loadingEl = h('NuxtLoading', { ref: 'loading' })
@@ -50,7 +49,7 @@ export default {
       }
     }, [
       loadingEl,
-      h(NuxtBuildIndicator),
+
       transitionEl
     ])
   },
@@ -160,10 +159,6 @@ export default {
     },
 
     setLayout (layout) {
-      if(layout && typeof layout !== 'string') {
-        throw new Error('[nuxt] Avoid using non-string value as layout property.')
-      }
-
       if (!layout || !layouts['_' + layout]) {
         layout = 'default'
       }
