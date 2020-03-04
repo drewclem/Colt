@@ -10,12 +10,12 @@
           <div>
             <nuxt-link
               to="/projectboard"
-              class="text-blue-light hover:text-blue-dark p-2 md:mr-3"
+              class="text-blue-light hover:text-blue-dark p-2 md:mr-8"
             >Project Board</nuxt-link>
 
             <nuxt-link
               to="/contribute"
-              class="text-blue-light hover:text-blue-dark p-2 md:mr-3"
+              class="text-blue-light hover:text-blue-dark p-2 md:mr-8"
             >Contribute</nuxt-link>
 
             <nuxt-link to="/contact" class="text-blue-light hover:text-blue-dark py-2 pl-2">Contact</nuxt-link>

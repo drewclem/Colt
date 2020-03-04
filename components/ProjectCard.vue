@@ -1,7 +1,7 @@
 <template>
   <div>
     <a :href="post.url">
-      <div class="flex justify-between mb-2">
+      <div class="flex justify-between items-baseline mb-2">
         <h2 class="text-blue-dark text-xl">{{post.title}}</h2>
         <p class="text-red text-sm">{{post.difficulty}}</p>
       </div>
