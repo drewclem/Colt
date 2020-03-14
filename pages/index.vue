@@ -5,14 +5,14 @@
         class="relative text-center md:text-left xl:w-11/12 xl:mx-auto md:flex mb-12 md:mb-24 mt-4 md:mt-8"
       >
         <div class="md:w-3/4 mt-6 mb-12 lg:mt-12">
-          <h1 class="text-5xl lg:text-6xl font-bold leading-tight mb-6">
+          <h1 class="text-5xl lg:text-6xl font-bold leading-tight mb-4">
             Guided Open
             <br />Source Learning
           </h1>
           <p
-            class="text-blue-lightest md:w-3/4"
+            class="text-blue-light md:w-3/4"
           >Gain real-world experience working through open source issues with senior developers. Sign up and grab your next OS project!</p>
-          <button class="button-base mt-6 button-red shadow-md hover:shadow-lg">
+          <button class="button-base mt-10 button-red shadow-md hover:shadow-lg">
             <nuxt-link to="/signup">Create an Account</nuxt-link>
           </button>
         </div>
@@ -23,7 +23,7 @@
 
       <div class="md:flex">
         <div class="pr-8 md:w-5/12 text-left md:text-right md:mt-12 mb-12 md:mb-12">
-          <h2 class="text-2xl md:text-4xl font-bold mb-6 md:mb-8">
+          <h2 class="text-2xl md:text-4xl leading-snug font-bold mb-6 md:mb-8">
             Check out the
             <span class="text-red">Project Board</span>
             and get started on your open source journey.
@@ -37,13 +37,13 @@
           <h3 class="font-display text-2xl text-red font-bold mb-4">Why ColtXP?</h3>
           <div class="text-blue-light">
             <p
-              class="mb-2"
+              class="mb-5"
             >One of the definitions of a colt is a 'young or inexperienced person.' Historically, and still in some trades today, the only way to gain experience and graduate from being a 'colt' was to work with an already skilled tradesman. The mentor/apprentice relationship was and is important.</p>
             <p
-              class="mb-2"
+              class="mb-5"
             >One thing about the dev community that is truly inspirational, is the willingness of other developers to extend a helping hand to people who are passionate and determined to learn their craft. From this relationship between mentor and apprentice my goal became building a place for those eager to learn and those willing to teach, to meet.</p>
             <p
-              class="mb-2"
+              class="mb-5"
             >That was the birth of ColtXP. A place for new and aspiring developers to join forces with senior developers to work on live real-world applications! You will no longer have to turn in resumes with blank experience fields. Now you can link up with senior developers, or list a project as a senior developer, and build a true one-on-one learning experience in the world of open source!</p>
           </div>
         </div>

@@ -1,5 +1,5 @@
 import Vuex from 'vuex'
-import firebase, { auth, GoogleProvider } from '~/plugins/firebase.js'
+import firebase, { auth } from '~/plugins/firebase.js'
 
 const createStore = () => {
   return new Vuex.Store({

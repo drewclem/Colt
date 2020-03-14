@@ -19,6 +19,7 @@
 .env.production.local
 .env
 .firebaserc
+/.nuxt
 
 npm-debug.log*
 yarn-debug.log*

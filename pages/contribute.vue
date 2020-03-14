@@ -1,10 +1,10 @@
 <template>
   <div class="container mx-auto p-4">
-    <div class="md:flex mb-10 md:mb-20">
-      <div class="flex-1 font-bold md:pr-10 mb-10">
+    <div class="md:flex items-center mb-10 md:mb-20">
+      <div class="flex-1 font-bold -mt-10 md:pr-10 mb-10">
         <h1 class="text-2xl lg:text-3xl text-red mb-4">Contribute to Colt</h1>
         <p
-          class="text-blue-light font-light text-xl mt-12"
+          class="text-blue-light font-light text-xl"
         >The best resources for learning are the ones that have a strong community behind them. That’s why at ColtXP, we encourage everyone to contribute in whatever way fits their lives best. Here you’ll find some quick guides on some of the ways you can help better the ColtXP community.</p>
       </div>
       <div class="flex-1 w-10/12 mx-auto">
@@ -13,7 +13,7 @@
     </div>
 
     <div class="mb-12 lg:w-10/12 lg:mx-auto">
-      <h2 class="text-red text-2xl font-bold mb-6">How can you help?</h2>
+      <h2 class="text-red text-3xl font-bold mb-6">How can you help?</h2>
       <div class="md:flex mb-8">
         <div class="pr-10 mb-8 flex-1">
           <h3 class="font-bold text-blue-dark text-xl mb-4">List Projects as a Mentor</h3>
